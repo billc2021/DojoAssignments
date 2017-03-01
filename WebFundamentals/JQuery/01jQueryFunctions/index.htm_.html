@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script>
+           $(document).ready(function(){
+
+               //console.log('jQuery is now working'); 
+               $('docuemt').ready(function(){
+                   $('#btnClick').click(function(){
+                       alert("You clicked the click button");
+                   });
+                   $('#btnHide').click(function(){
+                       $('p').hide();
+                   });
+                   $('#btnShow').click(function(){
+                       $('p').show();
+                   });
+                   $('#btnToggle').click(function(){
+                       $('p').toggle();
+                   });
+                   $('#btnSlideDown').click(function(){
+                       $('p').slideDown();
+                   });
+               });
+               
+           });
+        </script>
+    </head>
+    <body>
+        <div id="wrapper">
+
+            <div id="buttons">
+                <button id="btnClick">Click</button>
+                <button id="btnHide">Hide</button>
+                <button id="btnShow">Show</button>
+                <button id="btnToggle">Toggle</button>
+                <button id="btnSlideDown">Slide Down</button>
+                <button id="btnSlideUp">Slide Up</button>
+                <button id="btnSlideToggle">Slide Toggle</button>
+                <button id="btnFadeIn">Fade In</button>
+                <button id="btnFadeOut">Fade Out</button>
+                <button id="btnAddClass">Add Class</button>
+                <button id="btnBefore">Before</button>
+                <button id="btnAfter">After</button>
+                <button id="btnAppend">Append</button>
+                <button id="btnHtml">HTML</button>
+                <button id="btnAttr">Attr</button>
+                <button id="btnVal">Val</button>
+                <button id="btnText">Text</button>
+                <button id="btnData">Data</button>
+            </div> <!--BUTTONS-->
+
+            <div id="text">
+                <h2>Welcome to the jQuery Show</h2>
+                <h3>Click on one of the buttons to see the magic happen</h3>
+                
+                <p>
+                    Tofu paleo vaporware man bun, wayfarers brooklyn mustache swag marfa sriracha godard. Dreamcatcher everyday carry iPhone fingerstache. Lyft edison bulb echo park before they sold out umami vaporware. Bespoke poutine tofu, etsy drinking vinegar tattooed 3 wolf moon organic offal succulents. Locavore chillwave affogato 90's, hella coloring book williamsburg fashion axe intelligentsia slow-carb godard YOLO subway tile stumptown synth. Gluten-free jianbing fap butcher quinoa, yuccie tofu coloring book kombucha hammock humblebrag. Keytar skateboard hammock drinking vinegar mustache.
+                </p>
+                <p class="hidden">
+                    Plaid godard umami photo booth raw denim, VHS vegan put a bird on it echo park. Fixie banjo semiotics biodiesel intelligentsia 8-bit, bitters photo booth artisan PBR&B. +1 twee try-hard whatever artisan succulents. Banjo before they sold out single-origin coffee, stumptown irony slow-carb fingerstache poutine. Street art meditation unicorn flannel, ramps kombucha portland kickstarter kitsch. Ramps photo booth yr, single-origin coffee umami cronut locavore coloring book. Flexitarian blog echo park, hot chicken cold-pressed kinfolk flannel.
+                </p>
+                <p>
+                    Ramps organic ugh listicle roof party. Kinfolk fixie artisan, mixtape crucifix pug +1 biodiesel forage letterpress DIY shoreditch. Stumptown gastropub DIY mumblecore fixie, man bun squid. Etsy irony woke flannel, asymmetrical poke cliche mumblecore migas hot chicken brunch offal beard PBR&B vinyl. Single-origin coffee cardigan mlkshk echo park woke plaid, cliche etsy subway tile shoreditch vegan skateboard. Brooklyn bicycle rights twee ethical, vegan 3 wolf moon listicle vaporware mumblecore trust fund shabby chic messenger bag keytar. 90's wolf knausgaard twee vape, hashtag kinfolk thundercats.
+                </p>
+                <p>
+                    Pop-up farm-to-table cray, street art cronut ethical normcore venmo truffaut microdosing. Tumblr gochujang disrupt, everyday carry post-ironic flexitarian try-hard kitsch banh mi pop-up 90's activated charcoal four loko knausgaard flannel. Meggings leggings tumeric, raw denim cardigan asymmetrical vaporware fixie tousled cronut small batch PBR&B pour-over. Hoodie cold-pressed skateboard echo park, fap tbh enamel pin. Kombucha jianbing migas, williamsburg fixie hexagon raclette slow-carb yr artisan venmo hashtag etsy. Craft beer sriracha slow-carb, whatever seitan try-hard occupy deep v kinfolk squid. Vape gastropub mustache fanny pack DIY literally cray.
+                </p>
+                <p class="hidden">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut facilisis sit amet turpis eget pellentesque. Sed in urna egestas ex vehicula molestie. Suspendisse molestie nulla in libero dignissim euismod. Ut ullamcorper laoreet ex, imperdiet fermentum tellus suscipit sed. Pellentesque mi massa, mollis sed dapibus a, accumsan in libero. Curabitur at ultricies lacus. Maecenas quis ex ornare, elementum orci at, rutrum nulla. Sed vel augue sed justo suscipit condimentum. Aliquam efficitur lacinia tristique.
+                </p>
+
+            </div> <!--TEXTCONTENT-->
+
+        </div> <!--WRAPPER-->
+    </body>
+</html>

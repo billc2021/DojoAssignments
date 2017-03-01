@@ -1,0 +1,3 @@
+<script>
+    $('#ninja img')
+</script>

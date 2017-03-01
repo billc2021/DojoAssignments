@@ -1,0 +1,40 @@
+205  cd Documents/
+  206  ld
+  207  ls
+  208  cd coding_dojo/
+  209  cd DojoAssignments/
+  210  ls
+  211  git init
+  212  git add .
+  213  git commit -m "initial commit"
+  214  git push origin master
+  215  git remote add origin https://github.com/billc2021/DojoAssignments.git
+  216  git push -u origin master
+  217  git remote add origin https://github.com/billc2021/DojoAssignments.git
+  218  dgit remote add origin git@github.com:billc2021/DojoAssignment
+  219  git remote add origin git@github.com:billc2021/DojoAssignments.git
+  220  git push -u origin master
+  221  url=git@github.com:billc2021/DojoAssignments.git
+  222  git push -u origin master
+  223  ssh-keygen -t rsa -b 4096 -C “billc2021@gmail.com"
+  224  ssh-keygen -t rsa -b 4096 -C “billc2021@gmail.com"
+
+  225  git push -u origin master
+  226  cd Desktop/
+  227  ls
+  228  cd
+  229  cd Documents/
+  230  cd coding_dojo/
+  231  ls
+  232  cd DojoAssignments/
+  233  ls
+  234  git push -u origin master
+  235  git config --global --list
+  236  git push -u origin master
+  237  touch readme.md
+  238  open readme.md 
+  239  git status
+  240  git add 
+  241  git add .
+  242  git commit -m "readme.md file added"
+  243  git push -u origin master

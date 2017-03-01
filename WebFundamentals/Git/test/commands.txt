@@ -1,0 +1,19 @@
+  109  cd Desktop/
+  110  mkdir test
+  111  cd test
+  112  touch index.html styles.css commands.txt
+  113  ls
+  114  cp index.html index_2.html
+  115  ls
+  116  rm -rf styles.css
+  117  cd ..
+  118  mkdir destination
+  119  cd test
+  120  mv index_2.html ../destination/
+  121  ls
+  122  cd ..
+  123  cd destination/
+  124  ls
+  125  cd ..,
+  126  cd ..
+  127  rm -rf destination/

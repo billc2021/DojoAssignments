@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  <style>
+    div div { height: 100px; width: 150px; background-color: blue; margin: 15px;}
+    h3 { display: inline-block; margin-left: 170px; margin-top: 0px;}
+    .show p { display: none; margin-left: 360px; }
+    #right_para { display: inline-block; width: 600px; margin-left: 160px;
+      verticle-align: top; color: red; background-color: white;}
+    #right_para p:first-child  { display: none; margin-bottom: 200px;}
+    #blocks{ width: 100px; display: inline-block; }
+    body div img { height: 100px; width: 100px; }
+    .border_new { border: 10px solid green; }
+    .blank { background-color: white; color: black; }
+  </style>
+
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $("body div img").slideUp();
+        // alert("Handler for .click() called.");
+
+        // $('body div').click(function() {
+        //
+        // });
+        // $(body div p).css('display','none');
+
+        $('.click').click(function() {
+          alert("Handler for .click() called.");
+        });
+
+        $('.show').click(function() {
+          $('body div p').show();
+          // alert("Handler for .show() called.");
+        });
+
+        $('.hide').click(function() {
+          $(this).hide();
+          // alert("Handler for .hide() called.");
+        });
+
+        $('.toggle').click(function() {
+          // alert("Handler for .toggle() called.");
+          $('#right_para p:last-of-type').toggle();
+        });
+
+        $('.slideDown').click(function() {
+          $('body div img').slideDown();
+          // alert("Handler for .slideDown() called.");
+        });
+        $('.slideUp').click(function() {
+          $('body div img').slideUp();
+          // alert("Handler for .slideDown() called.");
+        });
+
+        $('.slideToggle').click(function() {
+          // alert("Handler for .slideToggle() called.");
+          $('body div img').slideToggle();
+        });
+
+        $('.fadeIn').click(function() {
+          // alert("Handler for .fadeIn() called.");
+          $('body div img').fadeIn();
+        });
+
+        $('.fadeOut').click(function() {
+          // alert("Handler for .fadeOut() called.");
+          $('body div img').fadeOut();
+        });
+
+        $('.addClass').click(function() {
+          alert("Handler for .addClass() called.");
+          $('body div img').addClass("border_new");
+        });
+
+        $('.before').click(function() {
+          $('body div img').before("Hello, I am .before method");
+          // $('body div p:nth-child(0)').text("Hello, I am \n");
+        });
+
+        $('.after').click(function() {
+          $('body div img').after("Hello, I am .after method");
+        });
+
+        $('.append').click(function() {
+          $('body div#right_para').append("Hello, I am .append method");
+          // .append appends text after previous closing tag
+        });
+
+        $('.html').click(function() {
+          $('.blank').html("<p>All new content. <em>You bet!</em></p>")
+        });
+
+        $('.text').click(function() {
+          var para_text = $('#right_para p').text();
+          alert(para_text);
+        });
+
+        $('.val').click(function() {
+          console.log($('div input').val());
+          $('div input').val("i am a new value")
+        });
+
+        // $('#attr_id').click(function() {
+        //   alert("Handler for .click() called.");
+        //   $(this).attr("checked");
+        //   $( "input" ).attr( "checked" );
+        // });
+
+        $('body div').click(function(){
+            $('input[type="checkbox"]').attr("checked", "checked");
+        });
+
+        $('.data').click(function() {
+          // console.log($( "body" ).data( "foo", 52 ));
+          // var mydata = $( "body" ).data();
+          $( "body" ).data( "role", "it worked!");// = "page";
+          // console.log($( "body" ).data( "role" ));
+          // console.log($( "body" ).data( "role") === "page");
+          console.log($( "body" ).data( "role" ));
+
+
+        });
+    });
+    </script>
+
+  </head>
+  <body data-role="page">
+    <div id="blocks">
+        <div class="click">
+          <h3>.click</h3>
+        </div>
+        <div class="hide">
+          <h3>.hide</h3>
+        </div>
+        <div class="show">
+          <h3>.show</h3>
+        </div>
+        <div class="toggle">
+          <h3>.toggle</h3>
+        </div>
+        <div class="slideDown">
+          <h3>.slideDown</h3>
+        </div>
+        <div class="slideUp">
+          <h3>.slideUp</h3>
+        </div>
+        <div class="slideToggle">
+          <h3>.slideToggle</h3>
+        </div>
+        <div class="fadeIn">
+          <h3>.fadeIn</h3>
+        </div>
+        <div class="fadeOut">
+          <h3>.fadeOut</h3>
+        </div>
+        <div class="addClass">
+          <h3>.addClass</h3>
+        </div>
+        <div class="before">
+          <h3>.before</h3>
+        </div>
+        <div class="after">
+          <h3>.after</h3>
+        </div>
+        <div class="append">
+          <h3>.append</h3>
+        </div>
+        <div class="html">
+          <h3>.html</h3>
+        </div>
+        <div class="attr">
+          <h3>.attr</h3>
+          <input id="attr_id" type="checkbox"/>
+        </div>
+        <div class="val">
+          <h3>.val</h3>
+        </div>
+        <div class="text">
+          <h3>.text</h3>
+        </div>
+        <div class="data">
+          <h3>.data</h3>
+        </div>
+    </div>
+    <div id="right_para">
+      <p>Hidden text to show</p>
+      <p>Leave hair everywhere see owner, run in terror or lick butt and make a weird face.
+         Thug cat put butt in owner's face stares at human while pushing stuff off a table poop on grasses.
+          Cat slap dog in face hola te quiero. Scratch the furniture eat grass, throw it back up.
+           Ears back wide eyed inspect anything brought into the house i am the best for chase after
+            silly colored fish toys around the house. Groom yourself 4 hours - checked, have your beauty
+            sleep 18 hours - checked, be fabulous for the rest of the day - checked!. Brown cats with pink ears.
+             Unwrap toilet paper. Poop in the plant pot intently sniff hand, howl on top of tall thing and poop
+             in the plant pot thinking longingly about tuna brine for brown cats with pink ears and flee in
+             terror at cucumber discovered on floor. Groom yourself 4 hours - checked, have your beauty sleep 18
+              hours - checked, be fabulous for the rest of the day - checked! sit on human. </p>
+      <img src="kitters.jpg">
+      <input id="ninjaCat" type="text" value="Ninja Cat">
+    </div>
+    <div class="blank"><p>sample text</p></div>
+  </body>
+
+</html>

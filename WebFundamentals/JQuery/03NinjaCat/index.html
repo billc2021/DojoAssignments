@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('img').click(function() {
+                    var newImg = $(this).attr('data-alt-src');
+                    var origImg = $(this).attr('src')
+                    $(this).attr("src", newImg);
+                    $(this).attr("data-alt-src", origImg);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <img src="img/cat0.png" data-alt-src="img/ninja0.png">
+            <img src="img/ninja1.png" data-alt-src="img/cat1.png">
+            <img src="img/cat2.png" data-alt-src="img/ninja2.png">
+            <img src="img/ninja3.png" data-alt-src="img/cat3.png">
+            <img src="img/cat4.png" data-alt-src="img/ninja4.png">
+                
+            
+        </div> <!--WRAPPER-->
+    </body>
+</html>

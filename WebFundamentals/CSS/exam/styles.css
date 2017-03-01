@@ -1,0 +1,141 @@
+* {
+	vertical-align: baseline;
+	font-weight: inherit;
+	font-family: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	border: 0 none;
+	outline: 0;
+	padding: 0;
+	margin: 0;
+	}
+body{
+    background-color: #062134;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#wrapper{
+    margin: 20px 5px 5px 10px;
+}
+.bluetext{
+    color: #1A97E6;
+}
+/************************/
+/*HEADER*/
+/************************/
+#header{
+    color: white;
+}
+#header p{
+    display: inline-block;
+    width: 300px;
+    padding: 0 0 20px 5px;
+}
+#header ul{
+    display: inline;
+}
+#header ul li{
+    display: inline;
+    font-size: .8em;
+    margin: 30px;
+}
+/************************/
+/*CONTENT*/
+/************************/
+#content{
+    width: 845px;
+    background-color: white;
+    padding: 15px;
+    border-bottom: 1px solid blue;
+}
+#blocks{
+    padding: 0;
+    margin: 0;
+}
+.blueblocks{
+    height: 260px;
+    width: 260px;
+    display: inline-block;
+    background-color: #1468A8;
+    margin: 5px 12px 25px 5px;
+    color: white;
+}
+.blueblocks img{
+    width: 35px;
+    color: white;
+    padding: 5px;
+    vertical-align: bottom;
+}
+.blueblocks h3{
+    display: inline;
+    font-size: 100%;
+}
+.blueblocks p{
+    font-size: 14px;
+    margin: 10px; 
+}
+.blueblocks button{
+    background-color: #1990DB;
+    color: white;
+    margin: 20px 0 0 10px;
+    font-size: 15px;
+    padding: 10px 25px;
+    border-radius: 5px; 
+}
+#contenttext div h3{
+    padding: 5px 0;
+    font-size: 20px;
+}
+#contenttext div h3:first-of-type{
+    font-size: 14px;
+}
+#contenttext div{
+    display: inline-block;
+    width: 200px;
+    margin-right: 77px;
+}
+#contenttext div img{
+    width: 250px;
+}
+#paragraphs{
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 25px;
+    font-size: 10px;
+}
+#paragraphs p:last-of-type{
+    font-size: 15px;
+}
+#contenttext div p{
+    font-size: 10px;
+}
+#testimonial{
+    display: inline-block;
+    width: 100px;
+    vertical-align: top;
+}
+#testimonial p:first-of-type{
+    background-color: #DAEDFF;
+    padding-left: 25px;
+    font-size: 15px;
+}
+/************************/
+/*FOOTER*/
+/************************/
+#footer{
+    background-color: #DAEDFF;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+#footer ul{
+    margin: 5px 0px 5px 100px;
+}
+#footer ul li{
+    display: inline;
+    font-size: .5em;
+    background-color: #FFFFFF;
+    margin: 5px;
+}
+#footer ul li:first-of-type{
+    color: lightblue
+}

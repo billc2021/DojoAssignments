@@ -1,0 +1,132 @@
+body{
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#wrapper{
+    width: 970px;
+    margin: 0 auto;
+    background-color: #2F5073;
+    color: white;
+}
+#pythonlogo{
+    width: 650px;
+    display: inline-block;
+}
+#pythonlogo img{
+    width: 350px;
+}
+#textandsearch{
+    width: 175px;
+    display: inline-block;
+    vertical-align: top;
+}
+#textandsearch p{
+    font-size: .6em;
+    text-align: right;
+}
+#textandsearch a{
+    color: orange;
+}
+#searchdiv{
+    background-color: #444444;
+    width: 250px;
+    text-align: center;
+    padding:15px;
+    border-radius: 15px;
+    margin: 0;
+}
+li{
+    list-style: none;
+}
+#navbar{
+    text-align: center;
+    background-color: #99A9BA;
+    width: 800px;
+    margin: 5px 10px 5px 50px;
+    border-top: 1px solid #99A9BA;
+    border-bottom: 1px solid #99A9BA;
+    border-radius: 15px;
+}
+#navbar li{
+    display: inline;
+    /*margin: 15px 15px ;*/
+    padding: 20px;
+}
+#sidebar{
+    width: 300px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+}
+
+#sidebar ul{
+    list-style: none;
+}
+#sidebar ul li:before{
+    content: ">>";
+    color: yellow;
+    font-size: 10px;
+}
+#sidebar a{
+    color: white;
+    font-size: 14px;
+}
+#maintext{
+    width: 500px;
+    display: inline-block;
+    text-align: center;
+}
+#headertext{
+    font-size: 14px;
+}
+.orange{
+    color: yellow;
+    font-style: italic;
+}
+#whitetext{
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    width: 970px;
+    padding-top: 15px;
+    font-size: 12px; 
+}
+#gettingstarted{
+    width: 400px;
+    border-top: 2px solid blue;
+    display: inline-block;
+    vertical-align: top;
+    padding: 5px 20px;
+    margin: 0 10px;
+}
+#applications{
+    width: 400px;
+    border-top: 2px solid blue;
+    display: inline-block;
+    padding: 5px 20px;
+    margin: 0 10px;
+}
+#gettingstarted li{
+    list-style-type: square;
+    padding: 5px;
+}
+#applications li{
+    list-style-type: square;
+    padding: 5px;
+}
+#footer{
+    text-align: center;
+}
+#footer li{
+    display: inline;
+    font-size: 14px;
+    margin: 0 15px;
+    color: lightblue;
+}
+#footer p{
+    font-size: 10px;
+    color: lightblue;
+    padding-bottom: 10px;
+}

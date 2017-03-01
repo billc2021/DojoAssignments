@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script>
+            // $(document).ready(function(){
+            //     $('img').click(function(){
+            //         $(this).hide();
+            //     })
+            //     $('button').click(function(){
+            //         $('img').show();
+            //     })
+            // });
+
+        $(document).ready(function(){
+            $('img').click(function(){
+                $(this).css('visibility', 'hidden');
+            });
+            $('button').click(function(){
+                $('img').css('visibility', 'initial')
+            })
+        });
+        </script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div>
+            <img class="ninjas" src="ninja.jpg">
+            <img class="ninjas" src="ninja.jpg">
+            <img class="ninjas" src="ninja.jpg">
+            <img class="ninjas" src="ninja.jpg">
+            </div>
+            <div>
+            <img class="ninjas" src="ninja.jpg">
+            <img class="ninjas" src="ninja.jpg">
+            <img class="ninjas" src="ninja.jpg">
+            <img class="ninjas" src="ninja.jpg">
+            </div>
+            <button>Reset</button>
+        </div> <!--WRAPPER-->
+    </body>
+</html>
