@@ -5,7 +5,7 @@
         <title></title>
         <link rel="stylesheet" type="text/css" href="styles.css">
         <script type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
-        <script type="text/javascript"></script>
+        <script type="text/javascript" src="scripts.js"></script>
     </head>
     <body>
         <table>
@@ -20,8 +20,18 @@
         <form>
             <h2>Add User</h2>
             <label>First Name:</label>
-            <input type="text" placeholder="First Name">
-            
+            <input id="first" type="text" name="first_name" placeholder="First Name">
+            <br>
+            <label>Last Name:</label>
+            <input id="last" type="text" name="last_name" placeholder="Last Name">
+            <br>
+            <label>Email Address:</label>
+            <input id="email" type="text" name="email" placeholder="Email Address">
+            <br>
+            <label>Contact#:</label>
+            <input id="contact" type="text" name="contact" placeholder="Contact#">
+            <br>
+            <input type="submit" name="submitBtn" value="Submit">
         </form>
     </body>
 </html>
