@@ -11,7 +11,7 @@ $(document).ready(function(){
             // alert('div clicked');
             // // $(this).$('div:first-child').hide();
             // // $(this).$('div:last-child').hide();
-            console.log($(description).val());
+            // console.log($(description).val());
         });
     });   
 });
