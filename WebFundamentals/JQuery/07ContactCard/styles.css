@@ -1,0 +1,54 @@
+html, body{
+    padding: 0;
+    margin: 0;
+}
+#wrapper{
+    width: 900px;
+    }
+#content{
+    margin: 0 auto;
+}
+
+/**********************************/
+/* INPUT FIELDS */
+/**********************************/
+div #input_fields{
+    width: 220px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 20px;
+    font-size: .7em;
+}
+#input_fields label, #input_fields input{
+    margin: 10px 0;
+}
+#input_fields textarea{
+    vertical-align: top;
+}
+#input_fields input:last-of-type{
+    position: relative;
+    left: 150px;
+}
+
+/**********************************/
+/* APPENDED CARDS */
+/**********************************/
+div #appended_cards{
+    width: 600px;
+    display: inline-block;
+}
+.cards{
+    border: 2px solid black;
+    width: 200px;
+    text-align: center;
+    margin: 10px;
+}
+.cards p:first-child{
+    font-size: 24px;
+}
+.cards p:last-child{
+    font-size: 20px;
+}
+p.desc{ 
+    /*display: none;*/
+}

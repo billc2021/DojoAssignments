@@ -1,0 +1,34 @@
+#wrapper{
+    width: 1200px;
+}
+#images{
+    width: 800px;
+    display: inline-block;
+}
+#rolodex{
+    width: 250px;
+    height: 550px;
+    display: inline-block;
+    background-color: red;
+    vertical-align: top;
+}
+#rolodex h1{
+    text-align: center;
+}
+#rolodex div{
+    background-color: white;
+    width: 229px;
+    height: 513px;
+    margin: 10px;
+}
+#rolodex p, #rolodex li{
+    font-size: 14px;
+}
+#rolodex p, #rolodex h4{
+    margin-left: 10px;
+}
+#rolodex div p{
+    padding: 0;
+    margin: 0 0 0 25px;
+    
+}
