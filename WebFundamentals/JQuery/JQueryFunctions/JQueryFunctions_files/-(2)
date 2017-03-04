@@ -1,0 +1,37 @@
+document.write("<scr"+"ipt type='text/javascript'>\n");
+document.write("var googletag = googletag || {};\n");
+document.write("googletag.cmd = googletag.cmd || [];\n");
+document.write("(function() {\n");
+document.write("var gads = document.createElement('script');\n");
+document.write("gads.async = true;\n");
+document.write("gads.type = 'text/javascript';\n");
+document.write("var useSSL = 'https:' == document.location.protocol;\n");
+document.write("gads.src = (useSSL ? 'https:' : 'http:') +\n");
+document.write("'//www.googletagservices.com/tag/js/gpt.js';\n");
+document.write("var node = document.getElementsByTagName('script')[0];\n");
+document.write("node.parentNode.insertBefore(gads, node);\n");
+document.write("})();\n");
+document.write("</scr"+"ipt>\n");
+document.write("<div id='div-gpt-ad-1486745825418-0' style='height:250px; width:300px;'>\n");
+document.write("<scr"+"ipt type='text/javascript'>\n");
+document.write("googletag.cmd.push(function() {\n");
+document.write("googletag.defineSlot('/96957839/Yahoo_NewM_July_ROS_300x250_AMPBF_WL', [300, 250], 'div-gpt-ad-1486745825418-0').addService(googletag.pubads());\n");
+document.write("googletag.pubads().enableSingleRequest();\n");
+document.write("googletag.enableServices();\n");
+document.write("googletag.pubads().set(\"page_url\", \"www.yahoo.com\");\n");
+document.write("googletag.display('div-gpt-ad-1486745825418-0');\n");
+document.write("});\n");
+document.write("</scr"+"ipt>\n");
+document.write("</div>\n");
+
+
+document.write('<img src="https://c1.adform.net/serving/cookie/match/?CC=1&party=15&curl=https://ums.adtech.de/mapuser?providerid=1016;userid=$UID" width="1" height="1" style="display:none;">');
+document.write('<img src="https://rtb.metrigo.com/delivery/sync/adtech/pixel_match" width="1" height="1" style="display:none;">');
+document.write('<iframe src="https://ssum-sec.casalemedia.com/usermatch?s=175407&cb=https%3A%2F%2Fums.adtech.de%2Fmapuser%3Fproviderid%3D1010%3Buserid=" width="1" height="1" style="display: none"></iframe>');
+document.write('<img src="https://ums.adtech.de/mapuser?providerid=1039;userid=0;getuser=https://pix04.revsci.net/D08734/a1/0/0/0.gif?DM_LOC=http%3A%2F%2Faol.com%2F0.gif%3Fid%3D$UID" width="1" height="1" style="display:none;">');
+document.write('<img src="https://pixel-a.sitescout.com/dmp/pixelSync?nid=11&rurl=https://ums.adtech.de/mapuser?providerid=1002;userid=$UID" width="1" height="1" style="display:none;">');
+document.write('<img src="https://x.bidswitch.net/sync?ssp=aol" width="1" height="1" style="display:none;">');
+document.write('<img src="https://cm.g.doubleclick.net/pixel?google_nid=adtech_dbm_eu&google_cm&google_sc" width="1" height="1" style="display:none;">');
+document.write('<img src="https://d5p.de17a.com/getuid/adtech" width="1" height="1" style="display:none;">');
+document.write('<iframe src="https://ad.turn.com/server/pixelssl.htm?fpid=28" width="1" height="1" style="display: none"></iframe>');
+document.write('<img src="https://sync.mathtag.com/sync/img?mt_exid=21&redir=https://ums.adtech.de/mapuser?providerid=1005;userid=[MM_UUID]" width="1" height="1" style="display:none;">');
