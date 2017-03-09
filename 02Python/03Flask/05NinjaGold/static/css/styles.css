@@ -1,0 +1,15 @@
+#wrapper{
+    width: 900px;
+}
+div .inline{
+    width: 50px;
+    display: inline-block;
+    border: 1px solid black;
+}
+form{
+    display: inline;
+}
+textarea{
+    width: 700px;
+    height: 300px;
+}

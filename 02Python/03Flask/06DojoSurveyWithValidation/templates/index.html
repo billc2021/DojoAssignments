@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Dojo Survey</title>
+    </head>
+    <body>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+                <p>{{message}}</p>
+            {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <form action="/result" method="post" name="survey">
+            <label>Your Name:</label>
+            <input name="name" type="text" placeholder=" Enter your name">
+            <br>
+            <label>Dojo Location</label>
+            <select name="location">
+                <option value="">Select Location</option>
+                <option value="chicago">Chicago</option>
+                <option value="tibet">Tibet</option>
+                <option value="sanfran">San Francisco</option>
+                <option value="austin">Austin</option>
+            </select>
+            <br>
+            <label>Favorite Language</label>
+            <select name="language">
+                <option value="">Select Language</option>
+                <option value="python">Python</option>
+                <option value="ruby">Ruby</option>
+                <option value="powershell">PowerShell</option>
+                <option value="c">C++</option>
+            </select>
+            <br>
+            <label>Comment (optional)</label>
+            <br>
+            <textarea name="comment" rows="10" cols="50" placeholder="Enter a comment"></textarea>
+            <br>
+            <input type="submit" value="button">
+        </form>
+    </body>
+</html>
