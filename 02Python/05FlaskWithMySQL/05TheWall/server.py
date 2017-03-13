@@ -79,6 +79,7 @@ def board():
     messages = []
     comments = []
     messages = mysql.query_db('select users.first_name, users.last_name, messages.message, messages.created_at as message_at, messages.id from messages left join users on users.id = messages.user_id')
+    
     comments = mysql.query_db('select comments.comment, users.first_name, users.last_name, comments.id, comments.created_at as comment_at, comments.message_id, comments.user_id from comments join users on comments.user_id = users.id')
     return render_template('board.html', messages = messages, comments = comments) 
 
