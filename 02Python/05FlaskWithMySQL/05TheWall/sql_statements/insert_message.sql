@@ -1,0 +1,1 @@
+insert into messages (message, created_at, updated_at, user_id) values("testing 1, 2, 3", now(), now(), 1)

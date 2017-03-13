@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>The Wall</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+                <p>{{message}}</p>
+            {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <h2>Login</h2>
+        <form action="/auth" method="POST">
+            <label for="user_email">Email:</label>
+            <input type="text" name="email" placeholder="Enter Email">
+            <br>
+            <label for="user_password">Password:</label>
+            <input type="password" name="password" placeholder="Enter Password">
+            <br>
+            <input type="submit" name="login" value="Login">
+        </form>
+        
+        <h2>Register</h2>
+        <form action="/register" method="POST">
+            <label for="first_name">First Name:</label>
+            <input type="text" name="first_name" placeholder="Enter First Name">
+            <br>
+            <label for="last_name">Last Name:</label>
+            <input type="text" name="last_name" placeholder="Enter Last Name">
+            <br>
+            <label for="user_email">Email:</label>
+            <input type="text" name="email" placeholder="Enter Email">
+            <br>
+            <label for="user_password">Password:</label>
+            <input type="password" name="password" placeholder="Enter Password">
+            <br>
+            <label for="confirm_password">Confirm Password:</label>
+            <input type="password" name="confirm" placeholder="Confirm Password">
+            <br>
+            <input type="submit" name="register" value="Register">
+        </form>
+    </body>
+</html>

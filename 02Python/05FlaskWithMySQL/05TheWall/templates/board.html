@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>The Dojo Wall</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        {% with flash_messages = get_flashed_messages() %}
+            {% if flash_messages %}
+            {% for flash_message in flash_messages %}
+                <p>{{flash_message}}</p>
+            {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <h1>Welcome {{ session['first_name'].title() }}</h1>
+        <div>
+            <form action="/post_msg" method="POST">
+                <label for="new_message">Post a message</label>
+                <br>
+                <textarea name="new_message" rows="5" cols="75" placeholder="Enter a message to post"></textarea>
+                <br>
+                <input type="submit" name="" value="Post a message">
+            </form>
+        </div> <!--POST MESSAGE FORM -->
+        <div>
+            {% for message in messages %}
+            <h3>{{ message.first_name.title() }} {{ message.last_name.title() }} - {{ message.message_at.strftime("%b %d %Y") }}</h3>
+
+            <p>
+                {{ message.message }}!
+            </p>
+            
+            {% for comment in comments %}
+            <ul>
+                {% if message.id == comment.message_id %}
+                <form action="/delete" method="POST">
+                    <li>{{comment.first_name}} {{comment.last_name}} - {{ comment.comment }}
+                {% if comment.user_id == session['user_id'] %}
+                    <input type="hidden" name="comment_user_ID" value={{ comment.user_id }}>
+                    <input type="hidden" name="commentID" value={{ comment.id }}>
+                    <input type="text" name="commented_at" value={{ comment.comment_at }}>
+                    <input type="submit" name="" value="Delete Comment">
+                </form>
+                </li>  
+                {% endif %}
+                {% endif %}
+            </ul>
+            {% endfor %}
+             <form action="/post_comment" method="POST">
+                <label for="new_comment">Post a comment</label>
+                <input type="hidden" name="message_id" value={{ message.id }}>
+                <br>
+                <textarea name="new_comment" rows="3" cols="50" placeholder="Enter a comment"></textarea>
+                <br>
+                <input type="submit" name="" value="Post a comment">
+            </form>
+             {% endfor %}
+        <div> <!-- MESSAGE -->
+        <form action="/logout" method="POST">
+            <br>
+            <input type="submit" name="" value="log out">
+        </form>
+    </body>
+</html>
