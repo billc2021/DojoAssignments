@@ -79,13 +79,7 @@ def board():
     messages = []
     comments = []
     messages = mysql.query_db('select users.first_name, users.last_name, messages.message, messages.created_at as message_at, messages.id from messages left join users on users.id = messages.user_id')
-    # for message in messages:
-    #     messages.append(message['message'])
-    #     comments.append(message['comment'])
     comments = mysql.query_db('select comments.comment, users.first_name, users.last_name, comments.id, comments.created_at as comment_at, comments.message_id, comments.user_id from comments join users on comments.user_id = users.id')
-    print "Messages are ==> {}".format(messages)
-    print "=======>"
-    print "Comments are ==> {}".format(comments)
     return render_template('board.html', messages = messages, comments = comments) 
 
 @app.route('/logout', methods=['POST', 'GET'])
@@ -106,7 +100,6 @@ def post_msg():
         }
         message_to_post_sql = 'insert into messages (message, created_at, updated_at, user_id) values (:message, :created_at, updated_at, :user_id)'
         message_to_post = mysql.query_db(message_to_post_sql, parameters)
-        # session['message_id'] = message_id
     flash('please enter a message before submittng')
     return redirect('/board')
 

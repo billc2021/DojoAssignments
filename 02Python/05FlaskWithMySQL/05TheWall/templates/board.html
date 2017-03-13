@@ -40,7 +40,7 @@
                 {% if comment.user_id == session['user_id'] %}
                     <input type="hidden" name="comment_user_ID" value={{ comment.user_id }}>
                     <input type="hidden" name="commentID" value={{ comment.id }}>
-                    <input type="text" name="commented_at" value={{ comment.comment_at }}>
+                    <input type="hidden" name="commented_at" value={{ comment.comment_at }}>
                     <input type="submit" name="" value="Delete Comment">
                 </form>
                 </li>  
