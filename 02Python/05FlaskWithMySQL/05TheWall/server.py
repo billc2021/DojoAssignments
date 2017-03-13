@@ -130,16 +130,13 @@ def post_comment():
 
 @app.route('/delete', methods=['POST'])
 def delete():
-    comment_created = request.form['commented_at']
-    if dt.now() - comment_created < 30:
-        comment_id = request.form['commentID']
-        parameters = {
-            'id': comment_id,
-        }
-        delete_sql = 'delete from comments where id = :id'
-        delete_statement = mysql.query_db(delete_sql, parameters)
-        return redirect('/board')
-    flash('Comment is too old to be deleted')
+    comment_id = request.form['commentID']
+    parameters = {
+        'id': comment_id,
+    }
+    delete_sql = 'delete from comments where id = :id'
+    delete_statement = mysql.query_db(delete_sql, parameters)
+    return redirect('/board')
 
 def setup_session(user_id, first_name, last_name, email):
     session['user_id'] = user_id
