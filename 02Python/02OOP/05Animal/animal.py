@@ -31,3 +31,14 @@ class Dog(Animal):
 
 dog1 = Dog("Rex")
 dog1.walk().walk().walk().run().run().pet().displayHealth()
+
+class Dragon(Animal):
+    def __init__(self, name, health):
+        self.name = name
+        self.health = health 
+        super(Dragon, self).__init__(self.name, self.health)
+        self.health = 170
+
+    def fly(self):
+        self.health -= 10
+        return self

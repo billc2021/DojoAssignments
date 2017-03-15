@@ -1,0 +1,26 @@
+1. Create a Django project
+
+	django-admin startproject main
+
+2. Create the apps directory
+
+	cd main
+	mkdir apps
+
+3. Create ‘dunder’ init file
+
+	cd apps
+	touch __init__.py
+
+4. Create the Django app
+
+	python ../manage.py startapp vinmyMVC
+
+5. Create the route file (urls.py)
+
+	urlpatterns = [ url(r’^’, include(‘apps.<app name>.urls’)), (url(r’^’, include(‘apps.vinmyMVC.urls’)]
+
+6. Create the views methods (views.py)
+
+
+7. Create the view directories and files
