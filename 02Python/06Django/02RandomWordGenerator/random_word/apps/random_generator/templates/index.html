@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <form action="/generate" method="POST">
+        {% csrf_token %}
+            <label for="random_word">Random Word (attempt: {{ request.session.count }})</label> <button><a href="/reset">reset session</a></button>
+            <br>
+            <input type="disabled" name="random_word" value="{{ request.session.word }}">
+            <br>
+            <input type="submit" name="generate" value="Generate">
+        </form>
+    </body>
+</html>
