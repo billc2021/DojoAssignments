@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <form action="/process" method="POST">
+        {% csrf_token %}
+            <label for="html_name">Your Name:</label>
+            <input type="text" name="html_name" placeholder="Enter your name">
+            <br>
+            <label for="html_location">Dojo Location:</label>
+            <select name="html_location">
+                <option value="">Select a Location</option>
+                <option value="moutain_view">Moutain View</option>
+                <option value="chicago">Chicago</option>
+                <option value="tokyo">Tokyo</option>
+            </select>
+            <br>
+            <label for="html_language">Favorite Language:</label>
+            <select name="html_language">
+                <option value="">Select a Language</option>
+                <option value="python">Python</option>
+                <option value="ruby">Ruby</option>
+                <option value="perl">Perl</option>
+            </select>
+            <br>
+            <label for="html_comment">Comment (optional):</label>
+            <br>
+            <textarea name="html_comment" rows="5" cols="50" placeholder="Enter a comment"></textarea>
+            <br>
+            <input type="submit" name="submit" value="Submit">
+        </form>
+    </body>
+</html>

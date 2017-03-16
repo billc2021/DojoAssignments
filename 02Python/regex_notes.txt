@@ -1,0 +1,39 @@
+To match an a or an e, use [ae].
+	gr[ea]y = grey or gray
+
+Use a hyphen inside a character class to specify a range of characters [0-9] 
+	matches a single digit between 0 and 9.
+
+Typing a caret after the opening square bracket negates the character class.  
+The result is that the character class matches any character that is not in the character class. 
+	q[^x] matches qu in question not Iraq (there is no character after q for the negated character class to match.
+
+\d matches a single character that is a digit
+
+\w matches a "word character" (alphanumeric characters plus underscore)
+
+\s matches a whitespace character (includes tabs and line breaks)
+
+You can use special character sequences to put non-printable characters (Remember that Windows text files use \r\n to terminate lines, while UNIX text files use \n.)
+	\t to match a tab character (ASCII 0x09)
+	\r for carriage return (0x0D)
+	\n for line feed (0x0A)
+	\a (bell, 0x07)
+	\e (escape, 0x1B)
+	\f (form feed, 0x0C)
+	\v (vertical tab, 0x0B)
+
+The dot matches a single character, except line break characters.
+	gr.y matches gray, grey, gr%y
+
+Anchors do not match any characters. They match a position.
+	^ matches at the start of the string 
+		^b matches only the first b in bob
+	$ matches at the end of the string
+
+The repetition operators/quantifiers are greedy, they expand the match as far as they can
+	<.+> matches <EM>first</EM>
+	
+Place a question mark after the quantifier to make it lazy
+	<.+?> matches <EM> 
+

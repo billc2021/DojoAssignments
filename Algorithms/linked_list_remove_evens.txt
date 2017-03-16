@@ -1,0 +1,24 @@
+function removeEvenVals (head) {
+    if (!head) {  // Empty List
+        return head;
+    }
+
+    var prev = head;
+    var curr = head;
+
+    while (curr.next) {
+
+        if (curr.value % 2 == 0) {
+            prev.next = curr.next;
+        } else {
+            prev = curr;
+        }
+        curr = curr.next;
+    }
+
+    if (curr.value % 2 == 0) {
+        prev.next = null;
+    }
+
+    return head;
+}
