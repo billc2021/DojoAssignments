@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div id="wrapper">
+            <label>Your Gold:</label>
+            <input type="text" disabled value="{{ request.session.gold }}"</input>
+            <div>
+                <p>Farm</p>
+                <p>(earns 10-20 golds)</p>
+                <form action="/process_money" method="POST">
+                {% csrf_token %}
+                    <input type="hidden" name="building" value="farm"/>
+                    <input type="submit"/>
+                </form> 
+
+                 <p>Cave</p>
+                <p>(earns 5-10 golds)</p>
+                <form action="/process_money" method="POST">
+                {% csrf_token %}
+                    <input type="hidden" name="building" value="cave"/>
+                    <input type="submit"/>
+                </form> 
+
+                <p>House</p>
+                <p>(earns 2-5 golds)</p>
+                <form action="/process_money" method="POST">
+                {% csrf_token %}
+                    <input type="hidden" name="building" value="house"/>
+                    <input type="submit"/>
+                </form> 
+
+                <p>Casino</p>
+                <p>(earns 0-50 golds)</p>
+                <form action="/process_money" method="POST">
+                {% csrf_token %}
+                    <input type="hidden" name="building" value="casino"/>
+                    <input type="submit"/>
+                </form> 
+            <label>Activites:</label>
+            <br>
+            {% for message in request.session.messages %}
+            {{ message }}
+            <br>
+            {% endfor %}
+        </div> 
+    </body>
+</html>
