@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Email Validation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        {% for m in messages %}
+            {{m}}
+        {% endfor %}
+        <br>
+        <form action="/validate" method="POST">
+        {% csrf_token %}
+            <label for="email">Email Address</label>
+            <br>
+            <input type="text" name="email" placeholder="Enter an email address">
+            <br>
+            <input type="submit" name="submit" value="Submit">
+        </form>
+    </body>
+</html>

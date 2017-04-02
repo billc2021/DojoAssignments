@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Welcome to My Book Reviews</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Welcome!</h1>
+        <form action="/register" method="POST">
+        {% csrf_token %}
+            <p>Register</p>
+            <label for="html_name">Name:</label>
+            <input type="text" name="html_name" placeholder="Enter Name">
+            <br>
+            <label for="html_alias">Alias:</label>
+            <input type="text" name="html_alias" placeholder="Enter an Alias">
+            <br>
+            <label for="html_email">email:</label>
+            <input type="text" name="html_email" placeholder="Enter Email">
+            <br>
+            <label for="html_password">Password:</label>
+            <input type="text" name="html_password" placeholder="Enter Password">
+            <br>
+            <label for="html_confirm">Confirm Password:</label>
+            <input type="text" name="html_confirm" placeholder="Confirm Password">
+            <br>
+            <input type="submit" name="submit" value="Register">
+        </form>
+         <form action="/login" method="POST">
+         {% csrf_token %}
+            <p>Login</p>
+            <label for="html_email">email:</label>
+            <input type="text" name="html_email" placeholder="Enter Email">
+            <br>
+            <label for="html_password">Password:</label>
+            <input type="text" name="html_password" placeholder="Enter Password">
+            <br>
+            <input type="submit" name="submit" value="Login">
+        </form>
+    </body>
+</html>

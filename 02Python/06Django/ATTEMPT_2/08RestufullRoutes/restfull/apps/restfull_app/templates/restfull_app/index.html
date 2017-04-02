@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Restfull Routes</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        {% for m in messages %}
+            {{m}}
+        {% endfor %}
+        <h1>Products</h1>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th></th>
+                <th>Description</th>
+                <th></th>
+                <th>Price</th>
+                <th></th>
+                <th>Actions</th>
+            </tr>
+
+            {% for product in products %}
+            <tr>
+                <td>{{product.name}}</td>
+                <td></td>
+                <td>{{product.desc}}</td>
+                <td></td>
+                <td>${{product.price}}</td>
+                <td></td>
+                <td><a href="{% url 'restfull:show' id=product.id %}">Show</a> | <a href="{% url 'restfull:edit' id=product.id %}">Edit</a</td>
+            </tr>
+            {% endfor %}
+        </table>
+        
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Favorites Page</h1>
+        <form action="/add_favorite">
+            {% csrf_token %}
+            <h3>Contribute a Quote</h3>
+            <label for="html_quote_by">Quoted By:</label>
+            <input type="text" name="html_quote_by" placeholder="Enter something SON">
+            <br>
+            <br>
+            <label for="html_quote">Quote:</label>
+            <textarea name="html_quote" rows="10" cols="30" placeholder="Enter something esle SON"></textarea>
+            <br>
+            <input type="submit" name="quote_submit" value="submit">
+        </form>
+        <br>
+        <form action="/logout" method="POST">
+        {% csrf_token %}
+            <input type="submit" name="logout" value="Log Out">
+        </form>
+    </body>
+</html>

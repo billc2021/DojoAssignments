@@ -1,0 +1,73 @@
+Django Steps
+
+======================================================
+1. Design your model
+======================================================
+	mysite/news/models.py
+
+from django.db import models
+
+class Reporter(models.Model):
+    full_name = models.CharField(max_length=70)
+
+    def __str__(self):              # __unicode__ on Python 2
+        return self.full_name
+
+class Article(models.Model):
+    pub_date = models.DateField()
+    headline = models.CharField(max_length=200)
+    content = models.TextField()
+    reporter = models.ForeignKey(Reporter, on_delete=models.CASCADE)
+
+    def __str__(self):              # __unicode__ on Python 2
+        return self.headline
+
+======================================================
+2. Creae the Database Tables
+======================================================
+	python manage.py migrate
+
+
+Import the models into an app
+
+	from news.models import Reporter, Article
+
+
+Select all objects
+
+	Reporterobject.all()
+
+
+Create a new Reporter
+
+	r = Reporter(full_name=‘John Smith’)
+
+
+Save the object into the database
+
+	r.save()
+
+
+Access an attribute
+
+	r.id
+	r.full_name
+
+
+Lookup an object
+
+	Reporter.objects.get(id=1)
+	Reporter.objects.get(full_name__startswith=‘John’)
+	Reporter.objects.get(full_name__contains=‘mith’)
+
+
+======================================================
+Create an Article
+======================================================
+	from datetime omport date
+
+	a = Article(pub_date=date.today(), headline=‘Django is cool’, content=‘Yeah.’, reporter=r)
+	a.save()
+
+	
+

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Home Page for Multiple Apps</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>Choose your app</h1>
+        <p>Login and Register<button><a href="{% url 'login:index' %}">Login and Register</a></button></p>
+        <p>Choose a Course<button><a href="{% url 'courses:index' %}">Courses</a></button></p>
+        <p>Disappearing Ninjas<button><a href="{% url 'ninja:index' %}">Disappearing Ninjas</a></button></p>
+        <p>Random Generator<button><a href="{% url 'random:index' %}">Random Generator</a></button></p>
+        <p>Survey<button><a href="{% url 'survey:index' %}">Survey</a></button></p>
+    </body>
+</html>

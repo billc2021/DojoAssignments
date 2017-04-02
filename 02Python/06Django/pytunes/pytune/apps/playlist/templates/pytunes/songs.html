@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Add Song</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        {% for m in messages %}
+        <p>{{m}}</p>
+        {% endfor %}
+        <h1>{{playlist.name}}</h1>
+        <form action="{% url 'pytunes:add_song' playlist_id=playlist.id %}" method="POST">
+        {% csrf_token %}
+            <label for="">Enter a Song</label>
+            <input type="text" name="song_name" value="Enter Song Name">
+            <input type="submit" name="" value="Add">
+        </form>
+        <table>
+            <tr>
+                <th>Playlist Name</th>
+                <th>Song Count</th>
+                <th>Date Created</th>
+            </tr>
+            {% for s in songs %}
+            <tr>
+                <td>{{s.title}}</td>
+                <td>Song Count</td>
+                <td>{{s.created_at}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

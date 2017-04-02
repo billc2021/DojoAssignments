@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Welcome</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        {% for m in messages %}
+            {{m}}
+        {% endfor %}
+        <br>
+        <button><a href="{% url 'reviewer:index' %}">Home</a></button>
+        <button><a href="{% url 'reviewer:add' %}">Add Book and Review</a></button>
+        <button><a href="{% url 'login:logout' %}">Logout</a></button>
+        <h1>Welcome, {{ request.session.first_name.title }}</h1>
+        <h3>Recent Book Reviews:</h3>
+    {% for book in books %}
+        <div>
+        <a href="{% url 'reviewer:book' book_id=book.id %}">{{book.title}}</a>
+        {% for rating in ratings %}
+            <p>{{rating.ratings__avg}} Stars</p>
+        {% endfor %}
+        <p><a href="={% url 'reviewer:users' user_id=book.user_id %}">{{book.user.name}}</a>
+            {% for review in reviews %}
+                {% if book.id == review.book_id %}
+                
+                <a href="{% url 'reviewer:users' user_id=review.user.id %}"> {{ review.user.first_name.title }}</a> says: {{review.review}} </p>
+                
+                {% endif %}
+            {% endfor %}
+        <hr>
+        </div>
+    {% endfor %}
+    <div>
+        <h3>Other Books with Reviews:</h3>
+        {% for book in books %}
+        
+        {% for review in reviews %}
+            {% if review.review and review.book_id == book.id%}
+            <p><a href="{% url 'reviewer:book' book_id=book.id %}">{{book.title}}</a></p>
+            {% endif %}
+        {% endfor %}
+       
+        {% endfor %}
+    </div>
+    </body>
+</html>

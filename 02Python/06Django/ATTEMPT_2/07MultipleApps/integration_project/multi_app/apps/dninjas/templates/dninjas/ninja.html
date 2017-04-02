@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        {%if turtle == 'leonardo' %}
+        {% load staticfiles %}
+        <img src={% static 'dninjas/images/leonardo.jpg' %} alt="Turtle">
+        {%endif%}
+
+        {%if turtle == 'michelangelo' %}
+        {% load staticfiles %}
+        <img src={% static 'dninjas/images/michelangelo.jpg' %} alt="Turtle">
+        {%endif%}
+
+        {%if turtle == 'raphael' %}
+        {% load staticfiles %}
+        <img src={% static 'dninjas/images/raphael.jpg' %} alt="Turtle">
+        {%endif%}
+
+        {%if turtle == 'donatello' %}
+        {% load staticfiles %}
+        <img src={% static 'dninjas/images/donatello.jpg' %} alt="Turtle">
+        {%endif%}
+
+        {%if turtle == 'april' %}
+        {% load staticfiles %}
+        <img src={% static 'dninjas/images/notapril.jpg' %} alt="April">
+        {%endif%}
+    </body>
+</html>

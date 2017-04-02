@@ -1,0 +1,33 @@
+QuerySet Retrieval
+    all
+    filter
+    exclude
+    order_by
+    reverse
+    distinct
+    annotate
+
+Model Retrieval
+    get
+    first
+    last
+    latest
+    earliest
+    exists
+    count
+    aggregate
+
+Lookup Action
+    exact
+    iexact
+    contains
+    startswith
+    endswith
+    in
+
+Lookup Comparators
+    gte
+    gt
+    lt
+    lte
+    eq

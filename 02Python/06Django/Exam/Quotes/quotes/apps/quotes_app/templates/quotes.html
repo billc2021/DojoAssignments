@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        {% for m in messages %}
+        <p>{{m}}</p>
+        {% endfor %}
+        <h1>Quotes Page</h1>
+        <br>
+        <p>Quotable Quotes</p>
+            {% for quote in quotes %}
+            <form action="/add_fav" method="POST"> 
+            {% csrf_token %}
+            <input type="hidden" name="quote_id" value="{{ quote.id }}">
+            <p>{{ quote.quote_by }}: {{quote.quote}}</p>
+            <p>posted by {{quote.user.name}}</p>
+            <input type="submit" name="add" value="Add to My List">
+            </form>
+            {% endfor %}
+
+            <h3>Favorites</h3>
+            {% for fav in favs %}
+            <form action="/remove_fav/{{fav.quote.id}}" method="POST"> 
+            {% csrf_token %}
+            <p>{{ fav.quote.quote_by }} {{fav.quote.quote}}</p>
+            <p>posted by {{fav.quote.user.name}}</p>
+            <input type="submit" name="add" value="Remove Fav">
+            </form>
+            {% endfor %}
+            
+        <form action="add_quote" method="POST">
+            {% csrf_token %}
+            <h3>Contribute a Quote</h3>
+            <label for="html_quote_by">Quoted By:</label>
+            <input type="text" name="html_quote_by" placeholder="Enter something SON">
+            <br>
+            <br>
+            <label for="html_quote">Quote:</label>
+            <textarea name="html_quote" rows="10" cols="30" placeholder="Enter something esle SON"></textarea>
+            <br>
+            <input type="submit" name="quote_submit" value="submit">
+        </form>
+        <br>
+
+        <form action="/logout" method="POST">
+        {% csrf_token %}
+            <input type="submit" name="logout" value="Log Out">
+        </form>
+    </body>
+</html>

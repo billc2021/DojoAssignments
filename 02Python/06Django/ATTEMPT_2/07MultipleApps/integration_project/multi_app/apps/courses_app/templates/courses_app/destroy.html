@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Delete a course</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>Are you sure you want to delete the following course?</h1>
+        <form action="{% url 'courses:delete' course_id=course.id %}" method="POST">
+            <label for="name">Name:</label>
+            <label>{{ course.name }}"</label>
+            <br>
+            <br>
+            <label for="description">Description:</label>
+            <label name="description">{{ course.description }}</label>
+            <br>
+            <button><a href="{% url 'courses:index' %}">No</a></button> <button><a href="{% url 'courses:delete' course_id=course.id %}">Yes I want to delete: {{ course.name }}</a></button>
+        </form>
+    </body>
+</html>

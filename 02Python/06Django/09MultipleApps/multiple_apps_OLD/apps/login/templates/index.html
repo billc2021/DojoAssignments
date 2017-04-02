@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Dojo Secrets</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        {% if messages %}
+        {% for message in messages %}
+            <p>{{ message.tags }}{{ message }}</p>
+        {% endfor %}
+        {% endif %}
+        <form action="/login" method="POST">
+        {% csrf_token %}
+            <h3>Login</h3>
+            <label for="html_email">Email:</label>
+            <input type="text" name="html_email" placeholder="Enter your Email">
+            <br>
+            <label for="html_password">Password:</label>
+            <input type="password" name="html_password" placeholder="Enter your Password">
+            <br>
+            <input type="submit" name="html_register" value="Login">
+        </form>
+
+        <form action="/register" method="POST">
+        {% csrf_token %}
+            <h3>Register</h3>
+            <label for="html_first_name">First Name:</label>
+            <input type="text" name="html_first_name" placeholder="Enter your First Name">
+            <br>
+            <label for="html_last_name">Last Name:</label>
+            <input type="text" name="html_last_name" placeholder="Enter your Last Name">
+            <br>
+            <label for="html_email">Email:</label>
+            <input type="text" name="html_email" placeholder="Enter your Email">
+            <br>
+            <label for="html_password">Password:</label>
+            <input type="password" name="html_password" placeholder="Enter your Password">
+            <br>
+            <label for="html_confirm">Confirm:</label>
+            <input type="password" name="html_confirm" placeholder="Confirm your Password">
+            <br>
+            <input type="submit" name="html_register" value="Register">
+        </form>
+    </body>
+</html>

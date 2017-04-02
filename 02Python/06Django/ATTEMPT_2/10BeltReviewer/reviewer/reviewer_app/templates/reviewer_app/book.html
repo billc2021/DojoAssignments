@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Welcome</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        {% for m in messages %}
+            {{m}}
+        {% endfor %}
+        <br>
+        <button><a href="{% url 'reviewer:index' %}">Home</a></button>
+        <button><a href="{% url 'reviewer:add' %}">Add Book and Review</a></button>
+        <button><a href="{% url 'login:logout' %}">Logout</a></button>
+        <h1>{{book.title }}</h1>
+        <h3>Author: {{book.author}}</h3>
+
+        <h3>Reviews</h3>
+        <!--<input type="text" name="" value="{{book.id}}">-->
+       
+        {% for review in reviews %}
+        <!--<input type="text" name="" value="{{review.book_id}}">-->
+        {% if review.book_id == book.id %}
+        <p>Ratings: {{review.ratings}} Stars</p>
+        <p>{{review.user.name}} says: {{review.review}}</p>
+        <p>Posted on {{review.created_at}}</p>
+        {% if review.user_id == request.session.user_id %}
+            <a href="{% url 'reviewer:delete_review' review_id=review.id %}">Delete this Review</a>
+        {% endif %}
+        <hr>
+        {% endif %}
+        {% endfor %}
+
+        <form >
+        {% csrf_token %}
+            <input type="hidden" name="title" value="{{book.title}}">
+            <input type="hidden" name="author_text" value="{{book.author}}">
+            <br>
+            <label for="review">Add a Review:</label>
+            <br>
+            <textarea name="review" rows="8" cols="40"></textarea>
+            <br>
+            <label for="ratings">Ratings:</label>
+            <input type="number" name="ratings" min="1" max="5">
+            <label for="ratings">Stars</label>
+            <br>
+            <input type="submit" name="submit" value="Add Book and Review">
+        </form>
+    </body>
+</html>

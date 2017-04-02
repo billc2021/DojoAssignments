@@ -1,0 +1,6 @@
+To get a full list of command accessible via manage.py 
+	python manage.py help
+
+If you already have a superuser or have forgotten it, you can always create one
+	python manage.py createsuperuser
+

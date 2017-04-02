@@ -1,0 +1,43 @@
+1. login
+    check email against database
+    check password against database
+
+2. register
+    check form data for validation
+    check if email exists
+    create user
+
+3. post secret
+4. delete secret the logged in user posted
+5. like secrets of others
+
+6. on index show 5 - 10 most recent posts
+7. include a "Most Pouplar" page - shows all secrets, sorted by number of likes (most likes first)
+8. on index and "Most Popular" show 
+    - how manay likes the secrets have received
+    - a link to that secret if that user didn't post it or like it
+    - an option to delete it if the current logged on user posted it
+    - when the secret was posted
+
+
+Models.py 
+1. user table
+    first_name
+    last_name
+    email
+    password
+    date created
+    date updated
+
+2. secret table
+    secret
+    user (who posted it)
+    date created 
+    date updated
+
+3. like table
+    likes (number of likes)
+    user (who liked it)
+    message (which message was liked)
+    date created
+    date updated

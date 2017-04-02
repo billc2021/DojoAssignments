@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <p>Thanks for submitting this form!  You have submitted this form {{ request.session.count}} times now.</p>
+        </form>
+            <h3>Submitted Information</h3>
+            <label>Name:</label>
+            <label> {{request.session.server_name}}</label>
+            <br>
+            <label for="server_location">Dojo Location:</label>
+            <label> {{request.session.location}}</label>
+            <br>
+            <label for="server_language">Favorite Language:</label>
+            <label> {{request.session.language}}</label>
+            <br>
+            <label for="server_comment">Comment:</label>
+            <label> {{request.session.comment}}</label>
+            <br>
+            <button><a href="{% url 'survey:back' %}">Go Back</a></button>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,599 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf810
+{\fonttbl\f0\fnil\fcharset0 Avenir-Book;\f1\fnil\fcharset0 Menlo-Bold;\f2\fnil\fcharset0 Menlo-Regular;
+\f3\fnil\fcharset0 Menlo-BoldItalic;\f4\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red13\green47\blue29;\red255\green255\blue255;\red14\green60\blue38;
+\red255\green0\blue0;\red83\green83\blue83;\red86\green7\blue13;\red51\green110\blue109;\red0\green0\blue109;
+\red15\green112\blue1;\red0\green0\blue255;\red109\green109\blue109;\red0\green0\blue109;\red169\green14\blue26;
+\red14\green60\blue38;\red191\green238\blue213;\red246\green246\blue246;\red13\green47\blue29;\red255\green255\blue255;
+\red0\green38\blue197;\red251\green0\blue7;\red171\green79\blue117;}
+{\*\expandedcolortbl;;\cssrgb\c4706\c23529\c14902;\cssrgb\c100000\c100000\c100000;\cssrgb\c4706\c29412\c20000;
+\csgenericrgb\c100000\c0\c0;\cssrgb\c40000\c40000\c40000;\cssrgb\c41569\c5490\c5490;\cssrgb\c25098\c50196\c50196;\cssrgb\c0\c0\c50196;
+\cssrgb\c0\c50196\c0;\cssrgb\c0\c0\c100000;\cssrgb\c50196\c50196\c50196;\cssrgb\c0\c0\c50196;\cssrgb\c72941\c12941\c12941;
+\cssrgb\c4706\c29412\c20000;\cssrgb\c78824\c94118\c86667;\cssrgb\c97255\c97255\c97255;\cssrgb\c4706\c23529\c14902;\cssrgb\c100000\c100000\c100000;
+\cssrgb\c0\c25098\c81569;\cssrgb\c100000\c0\c0;\cssrgb\c73333\c40000\c53333;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid301\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid4}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}}
+\margl1440\margr1440\vieww19480\viewh15260\viewkind0
+\deftab720
+\pard\pardeftab720\sl500\partightenfactor0
+
+\f0\b\fs57\fsmilli28800 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The MODEL (models.py)
+\b0\fs35 \
+ {\field{\*\fldinst{HYPERLINK "https://docs.djangoproject.com/en/1.10/ref/django-admin/#django-admin-sqlmigrate"}}{\fldrslt 
+\f1\b \cf4 \strokec4 Sqlmigrate}} - takes migration names and returns their SQL:
+\f2 \cf4 \cb1 \strokec4 \
+\pard\pardeftab720\sl420\partightenfactor0
+\cf4 	python manage.py sqlmigrate polls <
+\f3\i\b \cf5 \strokec6 0001
+\f2\i0\b0 \cf6 > 
+\fs24 (polls is the app name and 001 is the migration name)
+\fs20 \
+\pard\pardeftab720\sl420\partightenfactor0
+
+\fs35 \cf6 \
+\pard\pardeftab720\sl420\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://docs.djangoproject.com/en/1.10/ref/django-admin/#django-admin-check"}}{\fldrslt 
+\f1\b \cf4 \cb3 \strokec4 python manage.py check}}
+\f0 \cf2 \cb3 \strokec2  - checks for any problems in your project without making migrations or touching the database\
+\
+\pard\pardeftab720\sl500\sa350\partightenfactor0
+\cf2 A three-step guide to making model changes:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl500\partightenfactor0
+\ls1\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Change your models (in 
+\f1\b \cf4 \strokec4 models.py
+\f0\b0 \cf2 \strokec2 ).\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Run {\field{\*\fldinst{HYPERLINK "https://docs.djangoproject.com/en/1.10/ref/django-admin/#django-admin-makemigrations"}}{\fldrslt 
+\f1\b \cf4 \strokec4 python manage.py makemigrations}} to create migrations for those changes\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Run {\field{\*\fldinst{HYPERLINK "https://docs.djangoproject.com/en/1.10/ref/django-admin/#django-admin-migrate"}}{\fldrslt 
+\f1\b \cf4 \strokec4 python manage.py migrate}} to apply those changes to the database.\cb1 \
+\pard\pardeftab720\sl420\partightenfactor0
+\cf2 \cb3  
+\f2 \cf4 \cb1 \strokec4 \
+\pard\pardeftab720\sl633\sa345\partightenfactor0
+
+\f0\b\fs57\fsmilli28800 \cf2 \cb3 \strokec2 Playing with the API
+\b0 \
+\pard\pardeftab720\sl500\partightenfactor0
+
+\fs35 \cf2 To invoke the Python shell, use this command:\
+	
+\f2 \cf4 \cb1 \strokec4 python manage.py shell\
+\
+\pard\pardeftab720\sl500\partightenfactor0
+
+\f0 \cf2 \cb3 \strokec2 Once you\'92re in the shell, explore the {\field{\*\fldinst{HYPERLINK "https://docs.djangoproject.com/en/1.10/topics/db/queries/"}}{\fldrslt \cf7 \strokec7 database API}}:\
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f4\i \cf8 \cb1 \strokec8 # Import the model classes we just wrote.
+\f0\i0 \cf2 \cb3 \strokec2 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl500\partightenfactor0
+\ls2\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}
+\f1\b \cf9 \cb1 \expnd0\expndtw0\kerning0
+>>> \cf10 \outl0\strokewidth0 \strokec10 from
+\f2\b0 \cf4 \strokec4  
+\f1\b \cf11 \strokec11 polls.models
+\f2\b0 \cf4 \strokec4  
+\f1\b \cf10 \strokec10 import
+\f2\b0 \cf4 \strokec4  Question, Choice 
+\fs24 \
+\pard\tx720\pardeftab720\sl500\partightenfactor0
+
+\fs35 \cf4 \
+\pard\pardeftab720\sl420\partightenfactor0
+\cf12 \strokec12 # No questions are in the system yet.\cf4 \strokec4 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\partightenfactor0
+\ls3\ilvl0
+\f1\b \cf13 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 >>> 
+\f2\b0 \cf4 \strokec4 Question\cf6 \strokec6 .\cf4 \strokec4 objects\cf6 \strokec6 .\cf4 \strokec4 all() = \cf12 \strokec12 <QuerySet []>\
+\pard\tx720\pardeftab720\sl420\partightenfactor0
+\cf12 \
+\pard\pardeftab720\sl420\partightenfactor0
+\cf12 # Create a new Question.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl420\partightenfactor0
+\ls4\ilvl0
+\f1\b \cf13 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 >>> \cf10 \strokec10 from
+\f2\b0 \cf4 \strokec4  
+\f1\b \cf11 \strokec11 datetime
+\f2\b0 \cf4 \strokec4  
+\f1\b \cf10 \strokec10 import
+\f2\b0 \cf4 \strokec4  datetime as dt\
+\ls4\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 q \cf6 \strokec6 =\cf4 \strokec4  Question(question_text\cf6 \strokec6 =\cf14 \strokec14 "What's new?"\cf4 \strokec4 , pub_date\cf6 \strokec6 =\cf4 \strokec4 dt\cf6 \strokec6 .\cf4 \strokec4 now())\
+\pard\tx720\pardeftab720\sl500\partightenfactor0
+
+\f0\b \cf2 \cb3 \strokec2 ========================\
+
+\fs48 Creating a Project
+\fs35 \
+========================
+\b0 \
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f2 \cf4 \cb1 \strokec4 1. Create a project\
+django-admin startproject <
+\f3\i\b mysite
+\f2\i0\b0 >\
+\
+2. Create an app\
+\pard\pardeftab720\sl420\partightenfactor0
+\cf4 python manage.py startapp polls\
+\pard\pardeftab720\sl420\partightenfactor0
+\cf4 \
+3. \cf15 \outl0\strokewidth0 Start the server\
+\pard\pardeftab720\sl420\partightenfactor0
+\cf15 python manage.py runserver\
+\
+4. Add app to list of apps installed\
+\pard\pardeftab720\sl420\partightenfactor0
+\cf4 \cb16 \outl0\strokewidth0 \strokec4 mysite/settings.py\
+\cb17 INSTALLED_APPS \cf6 \strokec6 =\cf4 \strokec4  [\
+    \cf14 \strokec14 'polls.apps.PollsConfig'\cf4 \strokec4 ,\
+    \cf14 \strokec14 'django.contrib.admin'\cf4 \strokec4 ,\
+    \cf14 \strokec14 'django.contrib.auth'\cf4 \strokec4 ,\
+    \cf14 \strokec14 'django.contrib.contenttypes'\cf4 \strokec4 ,\
+    \cf14 \strokec14 'django.contrib.sessions'\cf4 \strokec4 ,\
+    \cf14 \strokec14 'django.contrib.messages'\cf4 \strokec4 ,\
+    \cf14 \strokec14 'django.contrib.staticfiles'\cf4 \strokec4 ,\
+]\cb1 \
+\pard\pardeftab720\sl420\partightenfactor0
+\cf15 \outl0\strokewidth0 \
+\
+5. Write your views.py file\
+\pard\pardeftab720\sl420\partightenfactor0
+\cf4 \cb16 \outl0\strokewidth0 \strokec4 polls/views.py\
+
+\f1\b \cf10 \cb17 \strokec10 from
+\f2\b0 \cf4 \strokec4  
+\f1\b \cf11 \strokec11 django.http
+\f2\b0 \cf4 \strokec4  
+\f1\b \cf10 \strokec10 import
+\f2\b0 \cf4 \strokec4  HttpResponse\
+\
+\
+
+\f1\b \cf10 \strokec10 def
+\f2\b0 \cf4 \strokec4  \cf11 \strokec11 index\cf4 \strokec4 (request):\
+    
+\f1\b \cf10 \strokec10 return
+\f2\b0 \cf4 \strokec4  HttpResponse(\cf14 \strokec14 "Hello, world. You're at the polls index."\cf4 \strokec4 )\cb1 \
+\pard\pardeftab720\sl420\partightenfactor0
+\cf15 \outl0\strokewidth0 \
+\pard\pardeftab720\sl420\partightenfactor0
+\cf15 6. Write your apps urls.py file\
+\pard\pardeftab720\sl420\partightenfactor0
+\cf4 \cb16 \outl0\strokewidth0 \strokec4 polls/urls.py\
+
+\f1\b \cf10 \cb17 \strokec10 from
+\f2\b0 \cf4 \strokec4  
+\f1\b \cf11 \strokec11 django.conf.urls
+\f2\b0 \cf4 \strokec4  
+\f1\b \cf10 \strokec10 import
+\f2\b0 \cf4 \strokec4  url\
+\
+
+\f1\b \cf10 \strokec10 from
+\f2\b0 \cf4 \strokec4  
+\f1\b \cf11 \strokec11 .
+\f2\b0 \cf4 \strokec4  
+\f1\b \cf10 \strokec10 import
+\f2\b0 \cf4 \strokec4  views\
+\
+urlpatterns \cf6 \strokec6 =\cf4 \strokec4  [\
+    url(r\cf14 \strokec14 '^$'\cf4 \strokec4 , views\cf6 \strokec6 .\cf4 \strokec4 index, name\cf6 \strokec6 =\cf14 \strokec14 'index'\cf4 \strokec4 ),\
+]\cb1 \
+\pard\pardeftab720\sl420\partightenfactor0
+\cf15 \outl0\strokewidth0 \
+7. Write your projects urls.py file\
+\pard\pardeftab720\sl420\partightenfactor0
+\cf4 \cb16 \outl0\strokewidth0 \strokec4 mysite/urls.py\
+
+\f1\b \cf10 \cb17 \strokec10 from
+\f2\b0 \cf4 \strokec4  
+\f1\b \cf11 \strokec11 django.conf.urls
+\f2\b0 \cf4 \strokec4  
+\f1\b \cf10 \strokec10 import
+\f2\b0 \cf4 \strokec4  include, url\
+
+\f1\b \cf10 \strokec10 from
+\f2\b0 \cf4 \strokec4  
+\f1\b \cf11 \strokec11 django.contrib
+\f2\b0 \cf4 \strokec4  
+\f1\b \cf10 \strokec10 import
+\f2\b0 \cf4 \strokec4  admin\
+\
+urlpatterns \cf6 \strokec6 =\cf4 \strokec4  [\
+    url(r\cf14 \strokec14 '^polls/'\cf4 \strokec4 , include(\cf14 \strokec14 'polls.urls'\cf4 \strokec4 )),\
+    url(r\cf14 \strokec14 '^admin/'\cf4 \strokec4 , admin\cf6 \strokec6 .\cf4 \strokec4 site\cf6 \strokec6 .\cf4 \strokec4 urls),\
+]\cb1 \
+\pard\pardeftab720\sl420\partightenfactor0
+\cf15 \outl0\strokewidth0 \
+\pard\tx720\pardeftab720\sl500\partightenfactor0
+
+\f0\b \cf18 \cb19 ========================\
+
+\fs48 Database Setup
+\fs35 \
+========================
+\f2\b0 \cf15 \cb1 \
+\pard\pardeftab720\sl420\partightenfactor0
+\cf15 1. Create models.py file\
+\pard\pardeftab720\sl420\partightenfactor0
+\cf4 \cb16 \outl0\strokewidth0 \strokec4 polls/models.py\
+
+\f1\b \cf10 \cb17 \strokec10 from
+\f2\b0 \cf4 \strokec4  
+\f1\b \cf11 \strokec11 django.db
+\f2\b0 \cf4 \strokec4  
+\f1\b \cf10 \strokec10 import
+\f2\b0 \cf4 \strokec4  models\
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1\b \cf10 \cb1 \strokec10 from
+\f2\b0 \cf4 \strokec4  
+\f1\b \cf11 \strokec11 django.utils
+\f2\b0 \cf4 \strokec4  
+\f1\b \cf10 \strokec10 import
+\f2\b0 \cf4 \strokec4  timezone\
+\pard\pardeftab720\sl420\partightenfactor0
+\cf4 \cb17 \
+\
+\
+
+\f1\b \cf10 \strokec10 class
+\f2\b0 \cf4 \strokec4  
+\f1\b \cf11 \strokec11 Question
+\f2\b0 \cf4 \strokec4 (models\cf6 \strokec6 .\cf4 \strokec4 Model):\
+    question_text \cf6 \strokec6 =\cf4 \strokec4  models\cf6 \strokec6 .\cf4 \strokec4 CharField(max_length\cf6 \strokec6 =200\cf4 \strokec4 )\
+    pub_date \cf6 \strokec6 =\cf4 \strokec4  models\cf6 \strokec6 .\cf4 \strokec4 DateTimeField(\cf14 \strokec14 'date published'\cf4 \strokec4 )\
+\
+	
+\f1\b \cf10 \cb1 \strokec10 def
+\f2\b0 \cf4 \strokec4  \cf11 \strokec11 __str__\cf4 \strokec4 (\cf10 \strokec10 self\cf4 \strokec4 ):\
+        
+\f1\b \cf10 \strokec10 return
+\f2\b0 \cf4 \strokec4  \cf10 \strokec10 self\cf6 \strokec6 .\cf4 \strokec4 question_text\
+\
+	
+\f1\b \cf10 \strokec10 def
+\f2\b0 \cf4 \strokec4  \cf11 \strokec11 was_published_recently\cf4 \strokec4 (\cf10 \strokec10 self\cf4 \strokec4 ):\
+        
+\f1\b \cf10 \strokec10 return
+\f2\b0 \cf4 \strokec4  \cf10 \strokec10 self\cf6 \strokec6 .\cf4 \strokec4 pub_date \cf6 \strokec6 >=\cf4 \strokec4  timezone\cf6 \strokec6 .\cf4 \strokec4 now() \cf6 \strokec6 -\cf4 \strokec4  datetime\cf6 \strokec6 .\cf4 \strokec4 timedelta(days\cf6 \strokec6 =1\cf4 \strokec4 )\cb17 \
+\
+\
+
+\f1\b \cf10 \strokec10 class
+\f2\b0 \cf4 \strokec4  
+\f1\b \cf11 \strokec11 Choice
+\f2\b0 \cf4 \strokec4 (models\cf6 \strokec6 .\cf4 \strokec4 Model):\
+    question \cf6 \strokec6 =\cf4 \strokec4  models\cf6 \strokec6 .\cf4 \strokec4 ForeignKey(Question, on_delete\cf6 \strokec6 =\cf4 \strokec4 models\cf6 \strokec6 .\cf4 \strokec4 CASCADE)\
+    choice_text \cf6 \strokec6 =\cf4 \strokec4  models\cf6 \strokec6 .\cf4 \strokec4 CharField(max_length\cf6 \strokec6 =200\cf4 \strokec4 )\
+    votes \cf6 \strokec6 =\cf4 \strokec4  models\cf6 \strokec6 .\cf4 \strokec4 IntegerField(default\cf6 \strokec6 =0\cf4 \strokec4 )\
+\
+	
+\f1\b \cf10 \cb1 \strokec10 def
+\f2\b0 \cf4 \strokec4  \cf11 \strokec11 __str__\cf4 \strokec4 (\cf10 \strokec10 self\cf4 \strokec4 ):\
+        
+\f1\b \cf10 \strokec10 return
+\f2\b0 \cf4 \strokec4  \cf10 \strokec10 self\cf6 \strokec6 .\cf4 \strokec4 choice_text\
+\
+\pard\pardeftab720\sl420\partightenfactor0
+\cf15 \outl0\strokewidth0 \
+2. Make migrations\
+\pard\pardeftab720\sl420\partightenfactor0
+\cf4 \outl0\strokewidth0 \strokec4 python manage.py makemigrations polls\
+\pard\pardeftab720\sl420\partightenfactor0
+\cf15 \outl0\strokewidth0 \
+3. Create table(s)\
+\cf4 \outl0\strokewidth0 \strokec4 python manage.py migrate\
+\cf15 \outl0\strokewidth0 \
+\pard\tx720\pardeftab720\sl500\partightenfactor0
+
+\f0\b \cf18 \cb19 ========================\
+
+\fs48 Playing with the API
+\fs35 \
+========================
+\b0\fs57\fsmilli28800 \cf2 \cb3 \outl0\strokewidth0 \strokec2 \
+\pard\pardeftab720\sl633\sa345\partightenfactor0
+
+\f2\fs35 \cf15 \cb1 \outl0\strokewidth0 1. \cf4 \outl0\strokewidth0 \strokec4 python manage.py shell\
+\cf15 \outl0\strokewidth0 2. Shit to type\
+
+\f1\b \cf13 \outl0\strokewidth0 \strokec13 >>> \cf10 \strokec10 from
+\f2\b0 \cf4 \strokec4  
+\f1\b \cf11 \strokec11 polls.models
+\f2\b0 \cf4 \strokec4  
+\f1\b \cf10 \strokec10 import
+\f2\b0 \cf4 \strokec4  Question, Choice   
+\f4\i \cf8 \strokec8 # Import the model classes we just wrote.
+\f2\i0 \cf4 \strokec4 \
+\pard\pardeftab720\sl420\partightenfactor0
+\cf12 \strokec12 # No questions are in the system yet.\cf4 \strokec4 \
+
+\f1\b \cf13 \strokec13 >>> 
+\f2\b0 \cf4 \strokec4 Question\cf6 \strokec6 .\cf4 \strokec4 objects\cf6 \strokec6 .\cf4 \strokec4 all()\
+\cf12 \strokec12 <QuerySet []>\cf4 \strokec4 \
+\
+\cf12 \strokec12 # Create a new Question.\cf4 \strokec4 \
+\cf12 \strokec12 # Support for time zones is enabled in the default settings file, so\cf4 \strokec4 \
+\cf12 \strokec12 # Django expects a datetime with tzinfo for pub_date. Use timezone.now()\cf4 \strokec4 \
+\cf12 \strokec12 # instead of datetime.datetime.now() and it will do the right thing.\cf4 \strokec4 \
+
+\f1\b \cf13 \strokec13 >>> \cf10 \strokec10 from
+\f2\b0 \cf4 \strokec4  
+\f1\b \cf11 \strokec11 django.utils
+\f2\b0 \cf4 \strokec4  
+\f1\b \cf10 \strokec10 import
+\f2\b0 \cf4 \strokec4  timezone\
+
+\f1\b \cf13 \strokec13 >>> 
+\f2\b0 \cf4 \strokec4 q \cf6 \strokec6 =\cf4 \strokec4  Question(question_text\cf6 \strokec6 =\cf14 \strokec14 "What's new?"\cf4 \strokec4 , pub_date\cf6 \strokec6 =\cf4 \strokec4 timezone\cf6 \strokec6 .\cf4 \strokec4 now())\
+\
+\cf12 \strokec12 # Save the object into the database. You have to call save() explicitly.\cf4 \strokec4 \
+
+\f1\b \cf13 \strokec13 >>> 
+\f2\b0 \cf4 \strokec4 q\cf6 \strokec6 .\cf4 \strokec4 save()\
+\
+\cf12 \strokec12 # Now it has an ID. Note that this might say "1L" instead of "1", depending\cf4 \strokec4 \
+\cf12 \strokec12 # on which database you're using. That's no biggie; it just means your\cf4 \strokec4 \
+\cf12 \strokec12 # database backend prefers to return integers as Python long integer\cf4 \strokec4 \
+\cf12 \strokec12 # objects.\cf4 \strokec4 \
+
+\f1\b \cf13 \strokec13 >>> 
+\f2\b0 \cf4 \strokec4 q\cf6 \strokec6 .\cf4 \strokec4 id\
+\cf12 \strokec12 1\cf4 \strokec4 \
+\
+\cf12 \strokec12 # Access model field values via Python attributes.\cf4 \strokec4 \
+
+\f1\b \cf13 \strokec13 >>> 
+\f2\b0 \cf4 \strokec4 q\cf6 \strokec6 .\cf4 \strokec4 question_text\
+\cf12 \strokec12 "What's new?"\cf4 \strokec4 \
+
+\f1\b \cf13 \strokec13 >>> 
+\f2\b0 \cf4 \strokec4 q\cf6 \strokec6 .\cf4 \strokec4 pub_date\
+\cf12 \strokec12 datetime.datetime(2012, 2, 26, 13, 0, 0, 775217, tzinfo=<UTC>)\cf4 \strokec4 \
+\
+\cf12 \strokec12 # Change values by changing the attributes, then calling save().\cf4 \strokec4 \
+
+\f1\b \cf13 \strokec13 >>> 
+\f2\b0 \cf4 \strokec4 q\cf6 \strokec6 .\cf4 \strokec4 question_text \cf6 \strokec6 =\cf4 \strokec4  \cf14 \strokec14 "What's up?"\cf4 \strokec4 \
+
+\f1\b \cf13 \strokec13 >>> 
+\f2\b0 \cf4 \strokec4 q\cf6 \strokec6 .\cf4 \strokec4 save()\
+\
+\cf12 \strokec12 # objects.all() displays all the questions in the database.\cf4 \strokec4 \
+
+\f1\b \cf13 \strokec13 >>> 
+\f2\b0 \cf4 \strokec4 Question\cf6 \strokec6 .\cf4 \strokec4 objects\cf6 \strokec6 .\cf4 \strokec4 all()\
+\cf12 \strokec12 <QuerySet [<Question: Question object>]>\
+\
+
+\fs40 \cf5 \ul \ulc5 AFTER Adding Custom __str__(self) method to Question Class
+\fs35 \cf12 \ulnone \
+# Django provides a rich database lookup API that's entirely driven by\cf4 \strokec4 \
+\cf12 \strokec12 # keyword arguments.\cf4 \strokec4 \
+
+\f1\b \cf13 \strokec13 >>> 
+\f2\b0 \cf4 \strokec4 Question\cf6 \strokec6 .\cf4 \strokec4 objects\cf6 \strokec6 .\cf4 \strokec4 filter(\cf10 \strokec10 id\cf6 \strokec6 =1\cf4 \strokec4 )\
+\cf12 \strokec12 <QuerySet [<Question: What's up?>]>\cf4 \strokec4 \
+
+\f1\b \cf13 \strokec13 >>> 
+\f2\b0 \cf4 \strokec4 Question\cf6 \strokec6 .\cf4 \strokec4 objects\cf6 \strokec6 .\cf4 \strokec4 filter(question_text__startswith\cf6 \strokec6 =\cf14 \strokec14 'What'\cf4 \strokec4 )\
+\cf12 \strokec12 <QuerySet [<Question: What's up?>]>\cf4 \strokec4 \
+\
+\cf12 \strokec12 # Get the question that was published this year.\cf4 \strokec4 \
+
+\f1\b \cf13 \strokec13 >>> \cf10 \strokec10 from
+\f2\b0 \cf4 \strokec4  
+\f1\b \cf11 \strokec11 django.utils
+\f2\b0 \cf4 \strokec4  
+\f1\b \cf10 \strokec10 import
+\f2\b0 \cf4 \strokec4  timezone\
+
+\f1\b \cf13 \strokec13 >>> 
+\f2\b0 \cf4 \strokec4 current_year \cf6 \strokec6 =\cf4 \strokec4  timezone\cf6 \strokec6 .\cf4 \strokec4 now()\cf6 \strokec6 .\cf4 \strokec4 year\
+
+\f1\b \cf13 \strokec13 >>> 
+\f2\b0 \cf4 \strokec4 Question\cf6 \strokec6 .\cf4 \strokec4 objects\cf6 \strokec6 .\cf4 \strokec4 get(pub_date__year\cf6 \strokec6 =\cf4 \strokec4 current_year)\
+\cf12 \strokec12 <Question: What's up?>\cf4 \strokec4 \
+\
+\cf12 \strokec12 # Request an ID that doesn't exist, this will raise an exception.\cf4 \strokec4 \
+
+\f1\b \cf13 \strokec13 >>> 
+\f2\b0 \cf4 \strokec4 Question\cf6 \strokec6 .\cf4 \strokec4 objects\cf6 \strokec6 .\cf4 \strokec4 get(\cf10 \strokec10 id\cf6 \strokec6 =2\cf4 \strokec4 )\
+\pard\pardeftab720\sl420\partightenfactor0
+\cf20 \strokec20 Traceback (most recent call last):\cf4 \strokec4 \
+    \cf6 \strokec6 ...\cf4 \strokec4 \
+\cf21 \strokec21 DoesNotExist\cf4 \strokec4 : Question matching query does not exist.\
+\
+\pard\pardeftab720\sl420\partightenfactor0
+\cf12 \strokec12 # Lookup by a primary key is the most common case, so Django provides a\cf4 \strokec4 \
+\cf12 \strokec12 # shortcut for primary-key exact lookups.\cf4 \strokec4 \
+\cf12 \strokec12 # The following is identical to Question.objects.get(id=1).\cf4 \strokec4 \
+
+\f1\b \cf13 \strokec13 >>> 
+\f2\b0 \cf4 \strokec4 Question\cf6 \strokec6 .\cf4 \strokec4 objects\cf6 \strokec6 .\cf4 \strokec4 get(pk\cf6 \strokec6 =1\cf4 \strokec4 )\
+\cf12 \strokec12 <Question: What's up?>\cf4 \strokec4 \
+\
+\cf12 \strokec12 # Make sure our custom method worked.\cf4 \strokec4 \
+
+\f1\b \cf13 \strokec13 >>> 
+\f2\b0 \cf4 \strokec4 q \cf6 \strokec6 =\cf4 \strokec4  Question\cf6 \strokec6 .\cf4 \strokec4 objects\cf6 \strokec6 .\cf4 \strokec4 get(pk\cf6 \strokec6 =1\cf4 \strokec4 )\
+
+\f1\b \cf13 \strokec13 >>> 
+\f2\b0 \cf4 \strokec4 q\cf6 \strokec6 .\cf4 \strokec4 was_published_recently()\
+\cf12 \strokec12 True\cf4 \strokec4 \
+\
+\cf12 \strokec12 # Give the Question a couple of Choices. The create call constructs a new\cf4 \strokec4 \
+\cf12 \strokec12 # Choice object, does the INSERT statement, adds the choice to the set\cf4 \strokec4 \
+\cf12 \strokec12 # of available choices and returns the new Choice object. Django creates\cf4 \strokec4 \
+\cf12 \strokec12 # a set to hold the "other side" of a ForeignKey relation\cf4 \strokec4 \
+\cf12 \strokec12 # (e.g. a question's choice) which can be accessed via the API.\cf4 \strokec4 \
+
+\f1\b \cf13 \strokec13 >>> 
+\f2\b0 \cf4 \strokec4 q \cf6 \strokec6 =\cf4 \strokec4  Question\cf6 \strokec6 .\cf4 \strokec4 objects\cf6 \strokec6 .\cf4 \strokec4 get(pk\cf6 \strokec6 =1\cf4 \strokec4 )\
+\
+\cf12 \strokec12 # Display any choices from the related object set -- none so far.\cf4 \strokec4 \
+
+\f1\b \cf13 \strokec13 >>> 
+\f2\b0 \cf4 \strokec4 q\cf6 \strokec6 .\cf4 \strokec4 choice_set\cf6 \strokec6 .\cf4 \strokec4 all()\
+\cf12 \strokec12 <QuerySet []>\cf4 \strokec4 \
+\
+\cf12 \strokec12 # Create three choices.\cf4 \strokec4 \
+
+\f1\b \cf13 \strokec13 >>> 
+\f2\b0 \cf4 \strokec4 q\cf6 \strokec6 .\cf4 \strokec4 choice_set\cf6 \strokec6 .\cf4 \strokec4 create(choice_text\cf6 \strokec6 =\cf14 \strokec14 'Not much'\cf4 \strokec4 , votes\cf6 \strokec6 =0\cf4 \strokec4 )\
+\cf12 \strokec12 <Choice: Not much>\cf4 \strokec4 \
+
+\f1\b \cf13 \strokec13 >>> 
+\f2\b0 \cf4 \strokec4 q\cf6 \strokec6 .\cf4 \strokec4 choice_set\cf6 \strokec6 .\cf4 \strokec4 create(choice_text\cf6 \strokec6 =\cf14 \strokec14 'The sky'\cf4 \strokec4 , votes\cf6 \strokec6 =0\cf4 \strokec4 )\
+\cf12 \strokec12 <Choice: The sky>\cf4 \strokec4 \
+
+\f1\b \cf13 \strokec13 >>> 
+\f2\b0 \cf4 \strokec4 c \cf6 \strokec6 =\cf4 \strokec4  q\cf6 \strokec6 .\cf4 \strokec4 choice_set\cf6 \strokec6 .\cf4 \strokec4 create(choice_text\cf6 \strokec6 =\cf14 \strokec14 'Just hacking again'\cf4 \strokec4 , votes\cf6 \strokec6 =0\cf4 \strokec4 )\
+\
+\cf12 \strokec12 # Choice objects have API access to their related Question objects.\cf4 \strokec4 \
+
+\f1\b \cf13 \strokec13 >>> 
+\f2\b0 \cf4 \strokec4 c\cf6 \strokec6 .\cf4 \strokec4 question\
+\cf12 \strokec12 <Question: What's up?>\cf4 \strokec4 \
+\
+\cf12 \strokec12 # And vice versa: Question objects get access to Choice objects.\cf4 \strokec4 \
+
+\f1\b \cf13 \strokec13 >>> 
+\f2\b0 \cf4 \strokec4 q\cf6 \strokec6 .\cf4 \strokec4 choice_set\cf6 \strokec6 .\cf4 \strokec4 all()\
+\cf12 \strokec12 <QuerySet [<Choice: Not much>, <Choice: The sky>, <Choice: Just hacking again>]>\cf4 \strokec4 \
+
+\f1\b \cf13 \strokec13 >>> 
+\f2\b0 \cf4 \strokec4 q\cf6 \strokec6 .\cf4 \strokec4 choice_set\cf6 \strokec6 .\cf4 \strokec4 count()\
+\cf12 \strokec12 3\cf4 \strokec4 \
+\
+\cf12 \strokec12 # The API automatically follows relationships as far as you need.\cf4 \strokec4 \
+\cf12 \strokec12 # Use double underscores to separate relationships.\cf4 \strokec4 \
+\cf12 \strokec12 # This works as many levels deep as you want; there's no limit.\cf4 \strokec4 \
+\cf12 \strokec12 # Find all Choices for any question whose pub_date is in this year\cf4 \strokec4 \
+\cf12 \strokec12 # (reusing the 'current_year' variable we created above).\cf4 \strokec4 \
+
+\f1\b \cf13 \strokec13 >>> 
+\f2\b0 \cf4 \strokec4 Choice\cf6 \strokec6 .\cf4 \strokec4 objects\cf6 \strokec6 .\cf4 \strokec4 filter(question__pub_date__year\cf6 \strokec6 =\cf4 \strokec4 current_year)\
+\cf12 \strokec12 <QuerySet [<Choice: Not much>, <Choice: The sky>, <Choice: Just hacking again>]>\cf4 \strokec4 \
+\
+\cf12 \strokec12 # Let's delete one of the choices. Use delete() for that.\cf4 \strokec4 \
+
+\f1\b \cf13 \strokec13 >>> 
+\f2\b0 \cf4 \strokec4 c \cf6 \strokec6 =\cf4 \strokec4  q\cf6 \strokec6 .\cf4 \strokec4 choice_set\cf6 \strokec6 .\cf4 \strokec4 filter(choice_text__startswith\cf6 \strokec6 =\cf14 \strokec14 'Just hacking'\cf4 \strokec4 )\
+
+\f1\b \cf13 \strokec13 >>> 
+\f2\b0 \cf4 \strokec4 c\cf6 \strokec6 .\cf4 \strokec4 delete()\
+\pard\pardeftab720\sl633\sa345\partightenfactor0
+\cf15 \outl0\strokewidth0 \
+\pard\tx720\pardeftab720\sl500\partightenfactor0
+
+\f0\b \cf18 \cb19 ========================\
+
+\fs48 Writing more views
+\fs35 \
+========================
+\f2\b0 \cf15 \cb1 \
+\pard\pardeftab720\sl420\partightenfactor0
+\cf4 \cb16 \outl0\strokewidth0 \strokec4 polls/views.py\
+
+\f1\b \cf10 \cb17 \strokec10 def
+\f2\b0 \cf4 \strokec4  \cf11 \strokec11 detail\cf4 \strokec4 (request, question_id):\
+    
+\f1\b \cf10 \strokec10 return
+\f2\b0 \cf4 \strokec4  HttpResponse(\cf14 \strokec14 "You're looking at question 
+\f1\b \cf22 \strokec22 %s
+\f2\b0 \cf14 \strokec14 ."\cf4 \strokec4  \cf6 \strokec6 %\cf4 \strokec4  question_id)\
+\
+
+\f1\b \cf10 \strokec10 def
+\f2\b0 \cf4 \strokec4  \cf11 \strokec11 results\cf4 \strokec4 (request, question_id):\
+    response \cf6 \strokec6 =\cf4 \strokec4  \cf14 \strokec14 "You're looking at the results of question 
+\f1\b \cf22 \strokec22 %s
+\f2\b0 \cf14 \strokec14 ."\cf4 \strokec4 \
+    
+\f1\b \cf10 \strokec10 return
+\f2\b0 \cf4 \strokec4  HttpResponse(response \cf6 \strokec6 %\cf4 \strokec4  question_id)\
+\
+
+\f1\b \cf10 \strokec10 def
+\f2\b0 \cf4 \strokec4  \cf11 \strokec11 vote\cf4 \strokec4 (request, question_id):\
+    
+\f1\b \cf10 \strokec10 return
+\f2\b0 \cf4 \strokec4  HttpResponse(\cf14 \strokec14 "You're voting on question 
+\f1\b \cf22 \strokec22 %s
+\f2\b0 \cf14 \strokec14 ."\cf4 \strokec4  \cf6 \strokec6 %\cf4 \strokec4  question_id)\
+\pard\pardeftab720\sl420\partightenfactor0
+\cf4 \cb1 \
+\pard\tx720\pardeftab720\sl500\partightenfactor0
+
+\f0\b \cf18 \cb19 \outl0\strokewidth0 ========================\
+
+\fs48 Adding new views to urls.py
+\fs35 \
+========================
+\f2\b0 \cf15 \cb1 \
+\pard\pardeftab720\sl420\partightenfactor0
+\cf4 \cb16 \outl0\strokewidth0 \strokec4 polls/urls.py\
+
+\f1\b \cf10 \cb17 \strokec10 from
+\f2\b0 \cf4 \strokec4  
+\f1\b \cf11 \strokec11 django.conf.urls
+\f2\b0 \cf4 \strokec4  
+\f1\b \cf10 \strokec10 import
+\f2\b0 \cf4 \strokec4  url\
+\
+
+\f1\b \cf10 \strokec10 from
+\f2\b0 \cf4 \strokec4  
+\f1\b \cf11 \strokec11 .
+\f2\b0 \cf4 \strokec4  
+\f1\b \cf10 \strokec10 import
+\f2\b0 \cf4 \strokec4  views\
+\
+urlpatterns \cf6 \strokec6 =\cf4 \strokec4  [\
+    
+\f4\i \cf8 \strokec8 # ex: /polls/
+\f2\i0 \cf4 \strokec4 \
+    url(r\cf14 \strokec14 '^$'\cf4 \strokec4 , views\cf6 \strokec6 .\cf4 \strokec4 index, name\cf6 \strokec6 =\cf14 \strokec14 'index'\cf4 \strokec4 ),\
+    
+\f4\i \cf8 \strokec8 # ex: /polls/5/
+\f2\i0 \cf4 \strokec4 \
+    url(r\cf14 \strokec14 '^(?P<question_id>[0-9]+)/$'\cf4 \strokec4 , views\cf6 \strokec6 .\cf4 \strokec4 detail, name\cf6 \strokec6 =\cf14 \strokec14 'detail'\cf4 \strokec4 ),\
+    
+\f4\i \cf8 \strokec8 # ex: /polls/5/results/
+\f2\i0 \cf4 \strokec4 \
+    url(r\cf14 \strokec14 '^(?P<question_id>[0-9]+)/results/$'\cf4 \strokec4 , views\cf6 \strokec6 .\cf4 \strokec4 results, name\cf6 \strokec6 =\cf14 \strokec14 'results'\cf4 \strokec4 ),\
+    
+\f4\i \cf8 \strokec8 # ex: /polls/5/vote/
+\f2\i0 \cf4 \strokec4 \
+    url(r\cf14 \strokec14 '^(?P<question_id>[0-9]+)/vote/$'\cf4 \strokec4 , views\cf6 \strokec6 .\cf4 \strokec4 vote, name\cf6 \strokec6 =\cf14 \strokec14 'vote'\cf4 \strokec4 ),\
+]\cb1 \
+\pard\pardeftab720\sl633\sa345\partightenfactor0
+\cf15 \outl0\strokewidth0 \
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+}

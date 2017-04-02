@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <form action="{% url 'courses:add_user' %}" method="POST">
+        {% csrf_token %}
+            <select name="user_id">
+                <option value"%">Users</option>
+                {% for user in users %}
+                <option value="{{ user.id }}">{{ user.first_name.title }} {{ user.last_name.title }}</option>
+                {% endfor %}
+            </select>
+
+            <select name="course_id">
+                <option value="%">Courses</option>
+                {% for course in courses %}
+                <option value="{{ course.id }}">{{ course.name.title }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" name="submit" value="Add User to Course">
+        </form>
+        <table>
+            <tr>
+                <th>Course</th>
+                <th></th>
+                <th>Title</th>
+                <th></th>
+                <th>Number of User</th>
+            </tr>
+            {% for course in courses %}
+            <tr>
+                <th>{{ course.id }}</th>
+                <th></th>
+                <th>{{ course.name }}</th>
+                <th></th>
+                <th>{{ course.total_users }}</th>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="{% url 'courses:index' %}">Return Home</a>
+    </body>
+</html>

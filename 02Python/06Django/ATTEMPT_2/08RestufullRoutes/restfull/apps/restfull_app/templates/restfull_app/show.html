@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Show Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>Product {{ product.id }}</h1>
+        <label for="">Name:</label>
+        <label>{{ product.name }}</label>
+        <br>
+        <label for="">Description:</label>
+        <label>{{ product.desc }}</label>
+        <br>
+        <label for="">Price:</label>
+        <label>{{ product.price }}</label>
+        <br>
+        <a href="{% url 'restfull:edit' id=product.id %}">Edit</a> | <a href="{% url 'restfull:pets' %}">Back</a>
+    </body>
+</html>
