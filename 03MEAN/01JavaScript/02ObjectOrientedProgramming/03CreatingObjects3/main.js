@@ -40,6 +40,10 @@ VehicleConstructor.prototype.move = function(){
     console.log(this.updateDistanceTravelled()); 
     return this;
 }
+VehicleConstructor.prototype.generateVin = function(){
+    this.vin =  Math.floor(Math.random() * 1000 + 1);
+    return this.vin;
+}
 
 // var Bike = new VehicleConstructor("tony", 2, 4, 5);
 // Bike.makeNoise = function() {
@@ -60,3 +64,5 @@ Bus.pickUp = function(passengers, new_passengers) {
 }
 console.log(Bus.pickUp(10, 15));
 Bus.move().checkMiles();
+
+console.log(Bus.vin);

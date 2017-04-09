@@ -1,0 +1,168 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf820
+{\fonttbl\f0\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;\red48\green61\blue72;}
+{\*\expandedcolortbl;;\cssrgb\c24314\c30588\c35294;}
+\margl1440\margr1440\vieww27560\viewh17120\viewkind0
+\deftab720
+\pard\pardeftab720\sl600\sa80\partightenfactor0
+
+\f0\b\fs32 \cf2 \expnd0\expndtw0\kerning0
+// Create a Schema for Users\
+\pard\pardeftab720\partightenfactor0
+
+\fs28 \cf2 var UserSchema = new mongoose.Schema(\{\
+ name: \{type: String\},\
+ age: \{type: Number\}\
+\}, \{timestamps: true\})
+\b0 \
+
+\fs24 // Store the Schema under the name 'User'
+\fs28 \
+
+\b mongoose.model('User', UserSchema);
+\b0 \
+
+\fs24 // Retrieve the Schema called 'User' and store it to the variable User
+\fs28 \
+
+\b var User = mongoose.model(\'91User');
+\b0 \
+\
+
+\b\fs32 Finding all users
+\b0\fs28 \
+
+\fs24 // Using the User Schema...\
+// ...retrieve all records matching \{\}
+\fs28 \
+
+\b User.find(\{\}, function(err, users) \{\
+
+\b0\fs24  // Retrieve an array of users
+\fs28 \
+
+\fs24  // This code will run when the DB is done attempting to retrieve all matching records to \{\}
+\fs28 \
+
+\b \})\
+
+\b0 \
+
+\b\fs32 Finding all users based on a requirement
+\b0\fs28 \
+
+\fs24 // ...retrieve all records matching \{name:'Jessica'\}
+\fs28 \
+
+\b User.find(\{name:'Jessica'\}, function(err, user) \{
+\b0 \
+
+\fs24  // Retrieve an array of users matching the name. Even if 1 record is found, the result will be an array the size of 1, with 1 object inside. (Notice, if we are expecting to retrieve one record, we may want to use findOne and retrieve the object as oppose to an array the size of one.\
+ // This code will run when the DB is done attempting to retrieve all matching records to \{name:'Jessica'\}
+\fs28 \
+
+\b \})
+\b0 \
+\
+
+\b\fs32 Finding one user
+\b0\fs28 \
+
+\fs24 // ...retrieve 1 record (the first record found) matching \{\} 
+\fs28 \
+
+\b User.findOne(\{\}, function(err, user) \{
+\b0 \
+
+\fs24  // Retrieve 1 object\
+ // This code will run when the DB is done attempting to retrieve 1 record.
+\fs28 \
+
+\b \})
+\b0 \
+\
+
+\b\fs32 Let's create a sample user
+\b0\fs28 \
+
+\fs24 // ...create a new instance of the User Schema and save it to the DB.
+\fs28 \
+
+\b var userInstance = new User()\
+userInstance.name = 'Andriana'\
+userInstance.age = 29\
+userInstance.save(function(err)\{
+\b0 \
+
+\fs24  // This code will run when Mongo has attempted to save the record.\
+ // If (err) exists, the record was not saved, and (err) contains validation errors.\
+ // If (err) does not exist (undefined), Mongo saved the record successfully.
+\fs28 \
+
+\b \})
+\b0 \
+\
+
+\b\fs32 Delete all users
+\b0\fs28 \
+
+\fs24 // ...delete all records of the User Model
+\fs28 \
+
+\b User.remove(\{\}, function(err)\{
+\b0 \
+
+\fs24  // This code will run when the DB has attempted to remove all matching records to \{\}
+\fs28 \
+
+\b \})
+\b0 \
+\
+
+\b\fs32 Delete one user
+\b0\fs28 \
+
+\fs24 // ...delete 1 record by a certain key/vaue.
+\fs28 \
+
+\b User.remove(\{_id: 'insert record unique id here'\}, function(err)\{
+\b0 \
+
+\fs24  // This code will run when the DB has attempted to remove all matching records to \{_id: 'insert record unique id here'\}
+\fs28 \
+
+\b \})
+\b0 \
+\
+
+\b\fs32 Update any records
+\b0\fs28 \
+
+\fs24 // ...update any records that match the query
+\fs28 \
+
+\b User.update(\{name:'Andrinnna'\}, \{name:'Andriana'\}, function(err)\{
+\b0 \
+
+\fs24  // This code will run when the DB has attempted to update the matching record.
+\fs28 \
+
+\b \})\
+
+\b0 \
+
+\b\fs32 // another way to update a record
+\b0\fs28 \
+
+\b User.findOne(\{name: 'Andriana'\}, function(err, user)\{
+\b0 \
+
+\b  user.name = 'Andri'\
+ user.save(function(err)\{
+\b0 \
+
+\fs24      // if save was successful awesome!
+\fs28 \
+
+\b  \})\
+\})}

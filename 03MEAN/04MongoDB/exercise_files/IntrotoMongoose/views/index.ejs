@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Intro to Mongoose</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <% for(var i = 0; i < users.length; i++){ %>
+            <p>Name: <%= users[i].name %>, Age: <%= users[i].age%></p>
+        <%}%> 
+        <form action="/users" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" name="name" value="">
+            <br>
+            <label for="age">Age:</label>
+            <input type="text" name="age" value="">
+            <br>
+            <input type="submit" name="submit" value="Submit">
+        </form>
+    </body>
+</html>

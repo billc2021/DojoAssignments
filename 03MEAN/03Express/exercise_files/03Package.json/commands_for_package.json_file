@@ -1,0 +1,5 @@
+1. npm init -y
+2. npm install <PACKAGE> --save
+    npm install express --save
+    npm install ejs --save
+    npm install body-parser --save

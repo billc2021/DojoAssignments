@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Mongoose</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/mongooses/new">New</a>
+        </nav>
+        <br>
+        <h1>Index Page</h1>
+        <% for(var i = 0; i < mongooses.length; i++){%>
+            <p>Name: <a href="/mongooses/edit/<%= mongooses[i]._id %>">  <%= mongooses[i].name %></a></p>
+            <ul>
+                <li>Weight: <%= mongooses[i].weight %></li>
+                <li>Age: <%= mongooses[i].age %></li>
+            </ul>
+            <form action="/mongooses/destroy/<%= mongooses[i]._id %>" method="POST">
+                <input type="submit" name="delete" value="Delete <%= mongooses[i].name %>">
+            </form>
+            <hr>
+        <%}%>
+    </body>
+</html>

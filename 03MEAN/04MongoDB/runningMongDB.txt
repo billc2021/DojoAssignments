@@ -1,0 +1,13 @@
+Running the MongoDB server:
+mongod
+If that doesn't work, try...
+sudo mongod
+
+Connect to your database:
+mongo
+
+Shutting down if your mongod window got closed:
+ps -ax | grep mongo
+
+sudo kill *that_number*
+

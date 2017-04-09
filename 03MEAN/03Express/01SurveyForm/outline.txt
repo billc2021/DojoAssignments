@@ -1,0 +1,4 @@
+1. Create an Express sever with the needed routes, renders, redirects, etc.
+2. Render index.ejs 
+3. Have index.ejs send a post request to result routes
+4. Have result route render a .ejs file displaying results
