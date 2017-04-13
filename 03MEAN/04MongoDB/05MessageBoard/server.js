@@ -74,20 +74,29 @@ Message.findOne({_id: req.params.id}, function(err, message){
     comment._message = message._id;
     // now save both to the DB
     comment.save(function(err){
-            message.comments.push(comment);
-            message.save(function(err){
-                    if(err) {
-                        console.log('================================')
-                        console.log('ERROR - COMMENT - POST Start')
-                        console.log('================================')
-                        console.log('Error with COMMENT - POST ', err)
-                        console.log('================================')
-                        console.log('ERROR - COMMENT - POST End')
-                        console.log('================================')
-                    } else {
-                        res.redirect('/');
-                    }
-                });
+        if(err) {
+            console.log('================================')
+            console.log('ERROR - COMMENT - POST Start')
+            console.log('================================')
+            console.log('Error with COMMENT - POST ', err)
+            console.log('================================')
+            console.log('ERROR - COMMENT - POST End')
+            console.log('================================')
+        }
+        message.comments.push(comment);
+        message.save(function(err){
+                if(err) {
+                    console.log('================================')
+                    console.log('ERROR - COMMENT - POST Start')
+                    console.log('================================')
+                    console.log('Error with COMMENT - POST ', err)
+                    console.log('================================')
+                    console.log('ERROR - COMMENT - POST End')
+                    console.log('================================')
+                } else {
+                    res.redirect('/');
+                }
+            });
         });
     });
 });
@@ -96,14 +105,14 @@ mongoose.connect('mongodb://localhost/message_board');
 var Schema = mongoose.Schema;
 
 var MessageSchema = new mongoose.Schema({
-    name: {type: String, required: true},
-    message: {type: String, required: true},
+    name: {type: String},
+    message: {type: String},
     comments: [{type: Schema.Types.ObjectId, ref: 'comment'}]
 }, {timestamps: true});
 
 var CommentSchema = new mongoose.Schema({
     _message: {type: Schema.Types.ObjectId, ref: 'Message'},
-    text: {type: String, required: true}
+    text: {type: String}
 }, {timestamps: true});
 
 var Message = mongoose.model('Message', MessageSchema);

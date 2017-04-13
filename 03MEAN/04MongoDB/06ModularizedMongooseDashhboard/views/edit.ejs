@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Edit</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/mongooses/new">New</a>
+        </nav>
+        <br>
+       <h1>Edit  Page</h1>
+        <br>
+        <form action="/mongooses/<%= mongoose._id %>" method="POST">    
+            <label for="name">Name Mongoose:</label>
+            <input type="text" name="name" value="<%= mongoose.name %>">
+            <br>
+            <label for="age">Age:</label>
+            <input type="text" name="age" value="<%= mongoose.age %>">
+            <br>
+            <label for="weight">Weight:</label>
+            <input type="text" name="weight" value="<%= mongoose.weight %>">
+            <br>
+            <input type="submit" value="Submit Edit">
+        </form>
+    </body>
+</html>

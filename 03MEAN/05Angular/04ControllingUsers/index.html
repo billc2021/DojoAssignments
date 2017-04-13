@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+    <head>
+        <title>Controlling Users</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js'></script>
+        <script>
+            var app = angular.module('app', []);
+            app.controller('userController', function($scope){
+                $scope.users = [];
+                $scope.addUser = function(){
+                    $scope.users.push($scope.newUser);
+                    $scope.newUser = {};
+                }
+                $scope.printIndex = function(val){
+                   console.log(val);
+                }
+                $scope.remove = function(){ 
+                    $scope.users.splice(this.$index, 1); 
+                }
+            })
+        </script>
+    </head>
+    <body>
+        <div ng-controller="userController">
+            <form>
+                First Name: <input type="text" ng-model="newUser.first_name">
+                <br>
+                Last Name: <input type="text" ng-model="newUser.last_name">
+                <br>
+                Favorite Language: <input type="text" ng-model="newUser.language">
+                <br>
+                <input type="submit" ng-click="addUser()">
+            </form>
+            <br>
+            <table>
+                <tr>
+                    <th>First Name</th>
+                    <th></th>
+                    <th>Last Name</th>
+                    <th></th>
+                    <th>Fav Language</th>
+                    <th></th>
+                    <th>Actions</th>
+                </tr>
+
+                <tr ng-repeat="user in users track by $index">
+                    <td>{{ user.first_name }}</td>
+                    <td></td>
+                    <td>{{ user.last_name }}</td>
+                    <td></td>
+                    <td>{{ user.language }}</td>
+                    <td></td>
+                    <td><button ng-click="remove(user)">Delete User</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="products">
+    <head>
+        <title>Products With a Factory</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js'></script>
+        <script>
+            var productsModule = angular.module("products", []);
+
+            productsModule.factory('productsFactory', function(){
+
+                var products = [
+                    {name: 'Hammer', price: 19.99},
+                ]
+                var factory = {}
+                factory.getProducts = function(callback){
+                    callback(products)
+                }
+                return factory
+            })
+
+            productsModule.controller('productsController', function($scope, productsFactory){
+                $scope.products=[]
+                productsFactory.getProducts(function(products){
+                    $scope.products = products
+                })
+                
+                
+            })
+        </script>
+    </head>
+    <body ng-controller="productsController">
+        <br>
+        <form> 
+            Product Name: <input type="" ng-model="product.name">
+            <br>
+            Product Price: <input type="" ng-model="product.price">
+            <br>
+            <input type="submit" value="Add Product" ng-click="addProduct()">
+        </form>
+        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th></th>
+                    <th>Price</th>
+                    <th></th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="product in products track by $index">
+                    <td>{{ product.name }}</td>
+                    <td></td>
+                    <td>{{ product.price }}</td>
+                    <td></td>
+                    <td><button type="submit">Delete Product</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Big Picture</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="node_modules/angular/angular.js"></script>
+        <script>
+            //<!--CREATE ANGULAR MODULE-->
+            var app = angular.module('app', []);
+            console.log(app);
+
+           // <!--CREATE ANGULAR CONTROLLER-->
+            app.controller('PlayersController', ['$scope', function($scope) {
+                //javascript that controls the Player view goes here:
+            }]);
+
+            //The above code creates a new controller.  If we want access to other Angular objects, all we do is inject other objects from the app in!
+            app.controller('PlayersController', ['$scope', 'newinjectable', function($scope, "custom name of new injectable") {
+            //javascript that controls the Player view goes here:
+            }]);
+
+            app.controller('AssociationsController', ['$scope', function($scope) {
+                //javascript that controls the Associations view goes here:
+            }]);
+            app.controller('TeamsController', ['$scope', function($scope) {
+                //javascript that controls the Teams view goes here:
+            }]);
+
+            //<!--CREATE ANGULAR FACTORIES-->
+            app.factory('PlayerFactory', ['$http', function($http) {
+                var players = {}; //object that holds methods and public properties for players.  Remember OOP - there are different ways of creating objects and adding methods and properties to that object.
+                return players;
+            }]);
+            app.factory('TeamFactory', ['$http', function($http) {
+                return {
+                    //object that holds methods and public properties for teams.  Remember OOP - there are different ways of creating objects and adding methods and properties to that object.
+            };
+            }]);
+        </script>
+        </head>
+    <body>
+    </body>
+</html>
