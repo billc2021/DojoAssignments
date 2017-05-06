@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script src="controller.js"></script>
+    </head>
+    <body>
+        <div ng-controller="StudentsController">
+            <h2>Controller Syntax - (Using $scope)</h2>
+            <ul>
+                <li ng-repeat="student in students">{{ student.name }}, {{student.age }}</li>
+            </ul>
+            <h2>Scope Methods and Data Binding (Again)</h2>
+            <form>
+                Name: <input type="text" ng-model="newStudent.name">
+                Age: <input type="text" ng-model="newStudent.age">
+                <input type="submit" value"Add New Student" ng-click="addStudent()">
+            </form>
+        </div>
+    </body>
+</html>

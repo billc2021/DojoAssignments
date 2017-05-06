@@ -1,0 +1,25 @@
+{
+  "name": "full-mean",
+  "version": "1.0.0",
+  "description": "General Walkthrough for Setting Up Full MEAN App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mean-april-2017/full-mean.git"
+  },
+  "keywords": [],
+  "author": "David Wolgemuth <davidjwolgemuth@wgmail.com> (https://david-wolgemuth.github.io)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mean-april-2017/full-mean/issues"
+  },
+  "homepage": "https://github.com/mean-april-2017/full-mean#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "mongoose": "^4.9.4"
+  }
+}

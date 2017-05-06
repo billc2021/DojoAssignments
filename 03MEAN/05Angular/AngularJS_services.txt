@@ -1,0 +1,9 @@
+$http - Allows AJAX calls to different API's
+$location = Changes the windows URL using JavaScirpt (think re-directs)
+
+ADD-ONs
+ngRoute
+    $routeProvider - a provider that will make AJAX calls to load partial views
+    $routeParams - allows us to get parameters from URLs
+
+ngCookie - allows us to set cookies easily

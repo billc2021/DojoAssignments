@@ -1,0 +1,6 @@
+01. ng-app - Defines the start of the Angular application
+02. ng-init - Directive that lets you declare a variable
+03. ng-repeat - Directive that loops through data structures
+04. ng-model - Directive that allows data on the VIEW side to be available to the $scope
+05. ng-click - Very much like the .click() jQuery event handler
+06. ng-if - 

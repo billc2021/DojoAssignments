@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/client.styles.css" rel="stylesheet">
+        <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js'></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-route.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-messages.js"></script>
+        <script src="app.js"></script>
+        <script src="./controllers/client.AppCtrl.js"></script>
+        <script src="./factories/client.appFactory.js"></script>
+        <script src="./controllers/client.ShowCtrl.js"></script>
+    </head>
+    <body>
+        <h1>Index Page</h1>
+        <nav>
+            <a href="#/">Root</a> | <a href="#/items/create">Create Item</a>
+        </nav>
+        <br>
+        <div ng-view></div>
+    </body>
+</html>

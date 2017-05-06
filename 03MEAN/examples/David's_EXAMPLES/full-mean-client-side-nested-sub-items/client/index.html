@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="itemsApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <script src="/dist/angular/angular.js"></script>
+  <script src="/dist/angular-route/angular-route.js"></script>
+  <script src="/app.js"></script>
+
+</head>
+<body>
+  <nav>
+    <h1>Items App</h1>
+    <ul>
+      <li><a href="/#!/">Items Index</a></li>
+      <li><a href="/#!/new">New Item</a></li>
+    </ul>
+  </nav>
+  <div ng-view=""></div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<h1>Full MEAN Wall</h1>
+<hr>
+<form ng-submit="postMessage()">
+    <label for="title">Enter a Title:</label>
+    <br>
+    <input type="text" ng-model="message.title">
+    <br>
+    <label for="body">Post a message:</label>
+    <br>
+    <textarea rows="4" cols="100" ng-model="message.body"></textarea>
+    <br>
+    <button type="submit">Post a message</button>
+</form>
+
+<div ng-repeat="m in messages">
+    <h3>{{ m.title }}</h3>
+    <ul>
+        <li>{{ m.body }}</li>
+        <ul>
+            <li ng-repeat="item in m.subItems">{{ item.content }}</li>
+        <form ng-submit="postComment(m._id, subItem)">
+            <ng-form>
+                <br>
+                <label><strong>Post a Comment</strong></label>
+                <br>
+                <textarea rows="4" cols="85" ng-model="subItem.comment"></textarea>
+                <br>
+                <input type="submit" value="Post a Comment">
+            </ng-form>
+        </form>
+        </ul>
+    </ul>
+    <hr>
+</div>
+

@@ -1,0 +1,41 @@
+<div ng-controller="userController">
+	<h1>Welcome, <span ng-bind="current_user.username"></h1>
+
+	<input type="text" ng-model="filter_topic">
+	<input type="submit" value="Search" >
+
+	<table>
+		<thead>
+			<th>Category</th>
+			<th>Topic</th>
+			<th>User Name</th>
+			<th>Posts</th>
+		</thead>
+		<tbody ng-repeat="topic in topics | filter: created_at">
+			<td>{{topic.category}}</td>
+			<td>{{topic.topic}}</td>
+			<td>{{topic.username}}</td>
+			<td>{{topic.posts}}</td>
+		</tbody>
+	</table>
+
+	<h2>Add a new Topic</h2>
+	<form>
+		Topic: <input type="text" ng-model="">
+		Description: <input type="text" ng-model="">
+		Category: 
+		<select ng-model="">
+			<option value="LAMP">LAMP Stack</option>
+			<option value="MEAN">MEAN Stack</option>
+			<option value="Interviews">Interviews</option>
+			<option value="Other">Other</option>
+		</select>	
+		<input type="submit" ng-click="">
+	</form>
+</div>
+
+
+
+
+
+

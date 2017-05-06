@@ -1,0 +1,17 @@
+<a ng-href = '#/dashboard'>Go to Polls</a>
+
+<h3 ng-bind = "sp.poll.question"></h3>
+<h4 ng-if = 'sp.poll'>Click the vote button to choose one</h4>
+
+<table ng-if = "sp.poll">
+  <tr>
+    <th>Option</th>
+    <th>Current Count of Votes</th>
+    <th>Action</th>
+  </tr>
+  <tr ng-repeat = "answer in sp.poll.answers">
+    <td ng-bind = 'answer.name'></td>
+    <td ng-bind = 'answer.votes'></td>
+    <td><button ng-click = 'sp.add_count(sp.poll, answer)'>Vote!</button></td>
+  </tr>
+</table>

@@ -1,0 +1,24 @@
+{
+  "name": "Node_Angular_Express_REST",
+  "preferGlobal": true,
+  "version": "0.0.1",
+  "description": "Beginning of a restful framework",
+  "author": "Mike Hannon <mjhannon@gmail.com>",
+  "license": "MIT",
+  "contributurs":["Arif Gursel"],
+  "keywords": [
+    "REST",
+    "Angular"
+  ],
+  "engines": {
+    "node": ">=0.10"
+  },
+  "scripts": {
+    "start": "node ./server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "mongoose": "^4.2.3"
+  }
+}

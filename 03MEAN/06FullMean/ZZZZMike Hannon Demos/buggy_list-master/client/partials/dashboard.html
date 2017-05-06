@@ -1,0 +1,20 @@
+<h1>Welcome {{dash.user.name}}<h1>
+
+<form ng-model = 'dash.bucketlist'>
+  <input type = 'text' placeholder = 'Title' ng-model = "dash.bucketlist.title">
+  <input type = 'text' placeholder = 'Description' ng-model = "dash.bucketlist.description">
+  <select   ng-options="user as user.name for user in dash.users | filter:{_id:'!'+dash.user._id}" multiple="true" ng-model = 'dash.bucketlist.users'>
+  </select>
+  <button ng-click = 'submit_list();'>Submit List</button>
+</form>
+<h3>Before I die I want to:</h3>
+<h4 ng-repeat = "bucketlist in dash.user.bucketlists">
+  <input type = "checkbox" ng-click = 'dash.update_bucket(bucketlist._id)' ng-model = 'bucketlist.completed'>
+  <span ng-bind = 'bucketlist._creator.name'></span> &nbsp;|&nbsp;
+  <span ng-bind = 'bucketlist.title'></span>&nbsp; - &nbsp; <span ng-bind = 'bucketlist.description'> </span> &nbsp;| &nbsp; <span ng-bind = "bucketlist.created_at | date : 'MMM d yyyy'"></span>
+</h4>
+
+<h3>List of Logged Users</h3>
+<div ng-repeat = 'user in dash.users'>
+<a ng-if = 'user._id != dash.user._id' ng-href = '#/users/{{user._id}}'>{{user.name}}</a>
+</div>

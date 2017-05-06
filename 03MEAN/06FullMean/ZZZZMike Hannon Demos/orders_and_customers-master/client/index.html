@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app = 'app'>
+<head>
+  <meta charset="UTF-8">
+  <script src = '/angular/angular.js'></script>
+  <script src = '/angular-route/angular-route.js'></script>
+  <script src = '/jquery/dist/jquery.js'></script>
+  <script type="text/javascript" src = '/angular/app.js'></script>
+  <script type="text/javascript" src = '/angular/factories/user.js'>
+  </script>
+  <script type="text/javascript" src = '/angular/factories/order.js'>
+  </script>
+  <script type="text/javascript" src = '/angular/controllers/orders.js'></script>
+  <script type="text/javascript" src = '/angular/controllers/customers.js'></script>
+
+</head>
+<body>
+  <a ng-href = "#customers">Customers</a> | <a ng-href = "#orders">Orders</a>
+<div ng-view></div>
+
+</body>
+</html>

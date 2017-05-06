@@ -1,0 +1,13 @@
+<section data-ng-controller="friendsController" data-ng-init="find()">
+	<h1>Friends</h1>
+	<ul>
+		<li data-ng-repeat="friend in friends">
+			<a data-ng-href="#!/friends/{{friend._id}}" data-ng-bind="friend.firstName"></a>
+			<br>
+			<p data-ng-bind="friend.lastName"></p>
+		</li>
+	</ul>
+	<div data-ng-hide="!friends || friends.length">
+		No friends yet, why don't you <a href="/#!/friends/create">create one</a>?
+	</div>
+</section>

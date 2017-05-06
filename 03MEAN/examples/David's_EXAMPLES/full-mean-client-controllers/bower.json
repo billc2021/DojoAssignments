@@ -1,0 +1,22 @@
+{
+  "name": "full-mean",
+  "description": "General Walkthrough for Setting Up Full MEAN App",
+  "main": "index.js",
+  "authors": [
+    "David Wolgemuth <davidjwolgemuth@wgmail.com> (https://david-wolgemuth.github.io)"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/mean-april-2017/full-mean",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-route": "^1.6.4"
+  }
+}

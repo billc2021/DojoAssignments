@@ -1,0 +1,8 @@
+<section data-ng-controller="friendsController" data-ng-init="findOne()">
+    <h1 data-ng-bind="friend.title"></h1>
+    <div data-ng-show="authentication.user._id == friend.creator._id">
+        <a href="/#!/friends/{{friend._id}}/edit">edit</a>
+        <a href="#" data-ng-click="delete();">delete</a>
+    </div>
+    <p data-ng-bind="friend.lastName"></p>
+</section>

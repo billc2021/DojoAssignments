@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+    <head>
+        <title>Index Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js'></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></script>
+        <!--<script src="node_modules/angular/angular.js"></script>
+        <script src="node_modules/angular-route/angular-route.js"></script>-->
+        <script>
+            var myApp = angular.module('myApp',['ngRoute'])
+            
+            myApp.config(function($routeProvider){
+                $routeProvider
+                .when('/',{
+                    templateUrl: 'view1.html',
+                    controller: 'view1Controller'
+                })
+                .when('/partial2',{
+                    templateUrl: 'view2.html',
+                    controller: 'view2Controller'
+                })
+                .otherwise({
+                    redirectTo:'/',
+                    controller: 'view1Controller'
+                })
+            })
+
+            myApp.controller('view1Controller', function($scope){
+                $scope.sports = ['golf', 'basketball', 'hockey', 'tennis', 'football']
+            })
+            myApp.controller('view2Controller', function($scope){
+                $scope.message = 'We are using another controller'
+            })
+        </script>
+    </head>
+    <body>
+        <h1>Index Page</h1>
+        <div>
+            <a href="#/">Partial 1</a> | <a href="#/partial2">Partial 2</a>
+            <div ng-view=""></div>
+        </div>
+    </body>
+</html>

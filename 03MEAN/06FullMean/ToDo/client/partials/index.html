@@ -1,0 +1,15 @@
+<h3>All Tasks</h3>
+<table class="table table-striped">
+	<tr>
+		<th>Completed</th><th>Title</th><th>Due Date</th>
+	</tr>
+
+	<tr ng-repeat="task in all_tasks track by $index">
+		<td>
+			<input type="checkbox" ng-change="changeStatus($index)" ng-model="task.completed">
+		</td>
+		<td>{{ task.title }}</td>
+		<td>{{ task.dueDate | date:'MM-dd-yyyy' }}</td>
+	</tr>
+</table>
+<a href="" ng-click="toggle()" class="btn btn-primary">Toggle Finished Items</a>

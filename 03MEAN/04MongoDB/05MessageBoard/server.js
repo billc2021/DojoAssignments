@@ -39,6 +39,7 @@ app.get('/message/:id', function (req, res){
  Message.findOne({_id: req.params.id})
  .populate('comments')
  .exec(function(err, comment) {
+     console.log('comment is', comment)
       res.render('comment', {comments: comment});
         });
 });

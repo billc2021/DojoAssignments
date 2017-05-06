@@ -1,0 +1,15 @@
+<h3>Items Index</h3>
+<ol>
+  <li ng-repeat="item in items">
+    <h5>{{ item.createdAt | date:'h:mma' }} - {{ item.title }}</h5>
+    <ul>
+      <li ng-repeat="subItem in item.subItems">
+        {{ subItem.content }}
+      </li>
+    </ul>
+    <form ng-submit="submitSubItemForm(item, subItem)">
+      <input type="text" ng-model="subItem.content" placeholder="Sub Item">
+      <button type="submit">Create</button>
+    </form>
+  </li>
+</ol>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="clickerApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <script src="/angular/angular.js"></script>
+    <script src="/angular-route/angular-route.js"></script>
+
+    <script src="/app.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li><a href="/#!/click">Clicker Page</a></li>
+        <li><a href="/#!/clicked">Clicked Count Page</a></li>
+    </ul>
+    <div ng-view=""></div>
+</body>
+</html>

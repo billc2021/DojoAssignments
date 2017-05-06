@@ -1,0 +1,13 @@
+<h3>Edit Friends!</h3>
+<form ng-submit="update()">
+    First Name: <input type="text" ng-model="friend.first_name">
+    <br>
+    Last Name: <input type="tezt" ng-model="friend.last_name">
+    <br>
+    <label for="birthday">Birthday: {{ friend.birthday | date }}</label>
+    <br>
+    <input type="date" ng-model="friend.birthday">
+    <br>
+    <br>
+    <button type="submit">Submit Edit(s)</button>
+</form>

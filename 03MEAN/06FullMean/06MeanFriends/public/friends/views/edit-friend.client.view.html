@@ -1,0 +1,28 @@
+<section data-ng-controller="FriendsController" data-ng-init="findOne()">
+	<h1>Edit Friend</h1>
+	<form data-ng-submit="update()" novalidate>
+		<div>
+			<label for="firstName">First Name</label>
+			<div>
+				<input type="text" data-ng-model="friend.firstName" id="firstName" placeholder="First Name" required>
+			</div>
+		</div>
+		<div>
+			<label for="lastName">Last Name</label>
+			<div>
+				<input type="text" data-ng-model="friend.lastName" id="lastName" placeholder="Lasst Name" required>
+			</div>
+		</div>
+        <label for="birthDay">Birthday</label>
+        <div>
+            <input type="date" date-ng-model="friend.birtDay" id="birthDay">
+        </div>
+		<div>
+			<input type="submit" value="Update">
+		</div>
+		<div data-ng-show="error">
+			<strong data-ng-bind="error"></strong>
+		</div>
+	</form>
+	</div>
+</section>

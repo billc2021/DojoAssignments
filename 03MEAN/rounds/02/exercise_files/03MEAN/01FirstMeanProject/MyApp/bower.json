@@ -1,0 +1,17 @@
+{
+  "name": "server",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "asdf"
+  ],
+  "license": "ISC",
+  "homepage": "asdfs",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

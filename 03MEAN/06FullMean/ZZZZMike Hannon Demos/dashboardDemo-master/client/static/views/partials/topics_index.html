@@ -1,0 +1,27 @@
+<h1>Welcome <span ng-bind= 'TopicsCtrl.user.name'></span></h1>
+Search: <input type = 'text' ng-model='colins_filter'>
+<table>
+	<thead>
+		<tr>
+			<td>Category</td>
+			<td>Topic</td>
+			<td>Name</td>
+			<td>Posts #</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat = 'topic in TopicsCtrl.topics'>
+			<td>{{topic._category.name}}</td>
+			<td><a ng-href = '#/topics/{{topic._id}}'>{{topic.title}}</a></td>
+			<td><a ng-href = '#/users/{{topic._user._id}}'>{{topic._user.name}}</a></td>
+			<td>{{topic._posted_on.length}}</td>
+		</tr>
+	</tbody>
+</table>
+<form >
+	Topic:<input type = 'text' ng-model = 'TopicsCtrl.newTopic.title'>
+	Description:<input type = 'text' ng-model = 'TopicsCtrl.newTopic.description'>
+	Category:<select ng-options= 'category.name for category in TopicsCtrl.categories' ng-model='TopicsCtrl.newTopic._category'>
+	</select>
+	<button ng-click = 'TopicsCtrl.createTopic()'>Add</button>
+</form>

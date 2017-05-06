@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script src="products.js"></script>
+    <body ng-controller="productController">
+        <fieldset><legend>Products Controller</legend>
+        <form ng-submit="create()">
+            Product Name: <input type="text" ng-model="product.name">
+            <br>
+            Product Price: <input type="text" ng-model="product.price">
+            <br>
+            <input type="submit" name="" value="Add Product">
+        </form>
+        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th></th>
+                    <th>Price</th>
+                    <th></th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="product in products">
+                    <td>{{ product.name }}</td>
+                    <td></td>
+                    <td>{{ product.price | currency:"$" }}</td>
+                    <td></td>
+                    <td><button ng-click="delete($index)">Delete</button></td>
+                </tr>
+                    </span>
+            </tbody>
+        </table>
+        </fieldset>
+    </body>
+</html>

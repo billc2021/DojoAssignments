@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Index</title>
+  <style>
+  body {
+    /*background-color: lightblue;*/
+  }
+  </style>
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src ="/js/bootstrap.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+  // Client side console logs
+  $(document).ready(function(){
+    console.log('asdf');
+
+    var name = prompt('What is your name?');
+    while (!name){
+        name = prompt('Seriously, What is your name?');
+    }
+
+    //Sockets
+    var socket = io.connect(); // connects to server 'connection'
+      //listeners
+      socket.on('name',function(name, messages){
+        $('#message_board').append("<p> You have logged in. </p>");
+        messages.forEach(function(value,key){
+          console.log(key,value);
+          $('#message_board').append("<p>" + value['name']+" said: "+ value['message'] + "</p>");
+        });
+
+      });
+      socket.on('new_login',log_to_board);
+      // socket.on('new_login',log_to_board);
+      socket.on('someone_logged_out', function(data){
+        $('#message_board').append("<p>" + data +" has logged out. </p>");
+      });
+      socket.on('publish_message', function(first_name, message){
+        $('#message_board').append("<p>" + first_name+" says: "+ message + "</p>");
+      })
+
+      //emitters
+      socket.emit('login',name);
+      // when window closed, key word 'disconnect' is passed to the server as a socket emit.
+      $('#submit').click(function(){
+        socket.emit('new_message',$("#new_message").val());
+      });
+  });
+  // helper functions:
+  function log_to_board(name){
+    $('#message_board').append("<p>" + name +" has logged in. </p>");
+  }
+  </script>
+</head>
+<body>
+  <div class = 'jumbotron jumbotron-danger'>
+    <h1> Dashboard </h1>
+  </div>
+<div class = "container">
+  <div class = 'row'>
+    <div class = "col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2" id = "message_board">
+      Hello!
+    </div>
+  </div>
+</div>
+
+<input type = "input" value = "" id = "new_message">
+<button id = 'submit'>Chat!</button>
+
+
+</body>
+</html>

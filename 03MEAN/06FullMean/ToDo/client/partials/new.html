@@ -1,0 +1,13 @@
+<h3>New Task</h3>
+<form ng-submit="create()">
+	Title: <input type="text" ng-model="task.title"> <br>
+	Due Date: <input id="datepicker" type="text" ng-model="task.dueDate"> <br>
+	<input class="btn btn-default" type="submit" value="Create Task">
+</form>
+
+<!-- Datepicker (jQueryUI) -->
+	<script type="text/javascript">
+	$( function() {
+	    $( "#datepicker" ).datepicker();
+	} );
+  </script>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" ng-app> <!-- Adds and ng-app directive to te HTML element -->
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    </head>
+    <body ng-init="dojo='ninja'">
+        <h1>{{ dojo }}</h1>
+
+        <h3>{{ 49567 * 2243 }}</h3>
+        <h3 ng-bind="49567 * 2243"></h3>
+    </body>
+</html>

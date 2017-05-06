@@ -1,0 +1,31 @@
+Web Apps to Create (deploy them on AWS)
+
+Sound Cloud
+Login/Registration
+User profile
+Upload music/album art/profile pics
+Play music
+Playlist
+Share
+Edit
+Save
+Delete
+Post to social media
+Up and Down voting of songs
+List of the most popular songs on the entire site.
+List of the most dis-liked songs on the entire site.
+
+
+
+
+
+2. match.com
+Login/Registration
+User profile
+Messaging system
+Survey for personality/interests with validation
+Rank matches
+Chat/messaging
+Search for profiles
+Notifications
+Location data/plot points from Google maps

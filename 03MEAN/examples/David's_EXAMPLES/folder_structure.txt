@@ -1,0 +1,22 @@
+├── bower.json
+├── client
+│   ├── config.js
+│   ├── controllers
+│   │   ├── items-index.js
+│   │   └── new-item.js
+│   ├── factories
+│   │   └── item.js
+│   ├── index.html
+│   └── partials
+│       ├── items-index.html
+│       └── new-item.html
+├── package.json
+├── server
+│   ├── config
+│   │   ├── mongoose.js
+│   │   └── routes.js
+│   ├── controllers
+│   │   └── items.js
+│   └── models
+│       └── item.js
+└── server.js

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script src="module.js"></script>
+    </head>
+    <body>
+        <div ng-init="students=[{name:'Mike',age:20},{name:'Fred',age:35},{name:'Mary',age:23},{name:'Beth',age:21}]">
+            <ul>
+                <li ng-repeat="student in students"> {{ student.name }}, {{ student.age }}</li>
+            </ul>
+        </div>
+    </body>
+</html>

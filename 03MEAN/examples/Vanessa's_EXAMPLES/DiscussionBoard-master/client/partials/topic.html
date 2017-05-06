@@ -1,0 +1,25 @@
+<div ng-controller="topicController">
+	<ul>
+		<li><a href="">Dashboard</a></li>
+		<li><a href="">Logout</a></li>
+	</ul>
+	<div ng-repeat="topic in topic">
+		<p>{{topic.username}} posted a topic:</p>
+		<p>{{topic.topic}}</p>
+		<p>{{topic.description}}</p>
+
+		<p>Post your answer here:</p>
+		<textarea ng-model=""></textarea>
+		<input type="submit" value="Post" ng-click="">
+		
+		<div ng-repeat="answer in answers">
+			<p>{{topic.answer_username}}: {{topic.answer}}</p>
+			<input type="submit" value="^" ng-click="">
+			<input type="submit" value="V" ng-click="">
+			<p ng-repeat="comment in comments">
+				{{topic.answer_cusername}}: {{topic.answer_comment}}
+			</p>
+			<input type="submit" value="Comment" ng-click="">
+		</div>
+	</div>
+</div>

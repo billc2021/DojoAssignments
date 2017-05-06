@@ -1,0 +1,19 @@
+<h3>Index Partial</h3>
+
+<div ng-repeat="item in items">
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td><a ng-href="#/items/{{ item._id }}">{{ item.name }}</a></td>
+        </tr>
+        <tr>
+            <td>Age:</td>
+            <td>{{ item.age }}</td>
+        </tr>
+        <tr>
+            <td>Acton:</td>
+            <td><button ng-click="deleteItem(item._id)">Delete</button></td>
+        </tr>
+    </table>
+    <hr>
+</div>

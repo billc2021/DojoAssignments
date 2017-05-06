@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>Index Page!</h1>
+        <form action="/result" method="POST">
+            Your Name: <input type="text" name="name" value="">
+            <br>
+            Dojo Location:
+            <select name="location">
+                <option>Select a Location</option>
+                <option value="chicago">Chicago</option>
+                <option value="tokyo">Tokyo</option>
+                <option value="seattle">Seattle</option>
+            </select>
+            <br>
+            Favorite Language:
+            <select name="language">
+                <option>Select a Language</option>
+                <option value="python">Python</option>
+                <option value="ruby">Ruby</option>
+                <option value="javascript">JavaScript</option>
+            </select>
+            <br>
+            Comment (optional):
+            <br>
+            <textarea name="comment" rows="10" cols="30"></textarea>
+            <br>
+            <input type="submit" name="" value="Submit">
+        </form>
+    </body>
+</html>

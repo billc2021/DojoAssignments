@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>RESTful Architecture</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+        <h1>RESTful Architecture</h1>
+        <h2>Consistent naming keeps big projects organized.</h2>
+        <p>
+            Large projects can easily become a morass of confusing function names, especially in projects in stacks like the MEAN stack where data are passed as objects throughout the project. Using standardized design principles throughout a project can help prevent confusing code. A common starting point for standardization for projects is RESTful routing as described here. This is just a starting point for many projects. For enterprise level projects, a good style guide will extend all the way through how variables should be named and placed in the code, and more!
+        </p>
+        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Verb</th>
+                    <th>Example Path</th>
+                    <th>Factory (client side)</th>
+                    <th>Route</th>
+                    <th>Controller (server side)</th>
+                    <th>What it does and notes:</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>get</td>
+                    <td>'/friends'</td>
+                    <td>factory.index()</td>
+                    <td>app.get('/friends', friends.index);</td>
+                    <td>index:function(req,res)...</td>
+                    <td>returns all friends from db, and often loads a view showing these data</td>
+                </tr>
+                <tr>
+                    <td>get</td>
+                    <td>'/friends/123123'</td>
+                    <td>factory.show()</td>
+                    <td>app.get('/friends/:id', friends.show)</td>
+                    <td>show:function(req,res)...</td>
+                    <td>returns one friend that has an _id that matches req(uest).params.id</td>
+                </tr>
+                <tr>
+                    <td>post</td>
+                    <td>'/friends'</td>
+                    <td>factory.create()</td>
+                    <td>app.post('/friends', friends.create)</td>
+                    <td>create:function(req,res)...</td>
+                    <td>creates a new friend in the db, from info in req(uest).body</td>
+                </tr>
+                <tr>
+                    <td>put/patch</td>
+                    <td>'/friends/12313'</td>
+                    <td>factory.update()</td>
+                    <td>app.put/patch('/friends/:id', friends.update)</td>
+                    <td>update:function(req,res)...</td>
+                    <td>updates the friend that has an _id from req(uest).params.id with data passed in from req(uest).body</td>
+                </tr>
+                <tr>
+                    <td>delete</td>
+                    <td>'/friends/12313'</td>
+                    <td>factory.delete()</td>
+                    <td>app.delete('/friends/:id', friends.delete)</td>
+                    <td>delete:function(req,res)...</td>
+                    <td>deletes a friend that has an _id from req(uest).params.id</td>
+                </tr>
+                <tr>
+                    <td>get</td>
+                    <td>'/friends/new</td>
+                    <td>handled by partials in Angular</td>
+                    <td>would be: app.get('/friends/new', function (req,res){res.render('friends/new.html')});</td>
+                    <td>would be: new:function(req,res)...</td>
+                    <td>Creates a form that can be filled out to make a new friend, and passed to the create method</td>
+                </tr>
+                <tr>
+                    <td>get</td>
+                    <td>'/friends/12313/edit'</td>
+                    <td>handled by partials in Angular</td>
+                    <td>would be: app.get('/friends/:id/edit', function (req,res){res.render('friends/edit.html')});</td>
+                    <td>would be: edit:function(req,res)...</td>
+                    <td>Creates a form that can be filled out to update a specific friend with an id.  (you might pre-populate the form with a show, using the :id)...</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

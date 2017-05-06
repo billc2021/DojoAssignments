@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    </head>
+    <body>
+        <div ng-init="students=['Mike', 'John', 'Trey', 'India']">
+            <ul>
+                <li ng-repeat="student in students"> {{ student }} {{ $index }}</li>
+            </ul>
+        </div>
+        <div ng-init="students2=[{name:'Gary',age:34}, {name:'Betty',age:24}, {name:'Pat',age:22}, {name:'Paul',age:35}]">
+            <ul>
+                <li ng-repeat="s in students2">{{ s.name }}, {{ s.age }}</li>
+            </ul>
+        </div>
+    </body>
+</html>

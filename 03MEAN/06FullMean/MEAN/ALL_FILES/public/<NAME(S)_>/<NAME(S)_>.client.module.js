@@ -1,0 +1,1 @@
+angular.module('NAME_OF_ANGULARJS_MODULE', []);

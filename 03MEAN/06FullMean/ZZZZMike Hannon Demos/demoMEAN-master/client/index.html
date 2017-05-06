@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Random File</title>
+  <script src = 'angular/angular.js'></script>
+  <script src = 'angular-route/angular-route.js'></script>
+  <script src = 'angular/app.js'></script>
+  <script src = 'angular/controllers/mainController.js'></script>
+  <script src = 'angular/factories/mainFactory.js'></script>
+
+
+</head>
+<body ng-app = "app">
+  Hello World
+  <div ng-controller = "mainController">
+    {{dbResponse[1].name}}
+    {{dbResponse[1].created_at | date: 'medium' }}
+  </div>
+</body>
+</html>

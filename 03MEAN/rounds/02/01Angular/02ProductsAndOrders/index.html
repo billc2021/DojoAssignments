@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body>
+        <div ng-controller="productController">
+            <fieldset>
+                <legend>Products Controller</legend>
+                <form ng-submit="create()">
+                    Product Name <input type="text" ng-model="product.name">
+                    <br>
+                    Product Price <input type="text" ng-model="product.price">
+                    <br>
+                    <input type="submit" id="submit">
+                </form>
+                <br>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th></th>
+                            <th>Price</th>
+                            <th></th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody ng-repeat="product in products">
+                        <tr>
+                            <td>{{ product.name }}</td>
+                            <td></td>
+                            <td>{{ product.price | currency:"$" }}</td>
+                            <td></td>
+                            <td><button ng-click="delete($index)">Delete</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+        </div>
+        <br>
+        <div ng-controller="orderController">
+            <fieldset>
+                <legend>Orders Controller</legend>
+                <table>
+                    <thead>
+                        <th>Name</th>
+                        <th></th>
+                        <th>Price</th>
+                        <th></th>
+                        <th>Qty.</th>
+                        <th></th>
+                        <th>Actions</th>
+                    </thead>
+                    <tbody ng-repeat="order in orders">
+                        <td>{{ order.name }}</td>
+                        <td></td>
+                        <td>{{ order.price }}</td>
+                        <td></td>
+                        <td>{{order.qty }}</td>
+                        <td></td>
+                        <td><button ng-click="buy($index)">Buy</button></td>
+                    </tbody>
+                </table>
+            </fieldset>
+        </div>
+    </body>
+</html>
