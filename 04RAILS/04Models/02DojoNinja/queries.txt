@@ -1,0 +1,32 @@
+rails g model Dojo name:string city:string state:string
+
+rails g model Ninja first_name:string last_name:string dojo:references
+
+
+DOJOS
+Dojo.create(name: "CodingDojo Seattle", city: "Seattle", state: "WA")
+Dojo.create(name: "CodingDojo Silicon Valley", city: "Mountain View", state: "CA")
+Dojo.create(name: "CodingDojo New York", city: "New York", state: "NY")
+
+Dojo.create(name: "CodingDojo Austin", city: "Austin", state: "TX")
+
+NINJAS
+Seattle's
+	Ninja.create(first_name:"Leo", last_name: "Bergnaum", dojo:Dojo.first)
+	Ninja.create(first_name:"Kenneth", last_name: "Padberg", dojo:Dojo.first) 
+	Ninja.create(first_name:"Abdullah", last_name: "Farrell", dojo:Dojo.first)
+
+Mountain View's
+	Ninja.create(first_name:"AbdullahKatelyn", last_name: "Satterfield", dojo:Dojo.second)
+	Ninja.create(first_name:"Frances", last_name: "Bahringer", dojo:Dojo.second)
+	Ninja.create(first_name:"Katelyn", last_name: "Koelpin", dojo:Dojo.second)
+
+New York's
+	Ninja.create(first_name:"Fabiola", last_name: "Hane", dojo:Dojo.last)
+	Ninja.create(first_name:"Malachi", last_name: "Jones", dojo:Dojo.last)
+	Ninja.create(first_name:"Dean", last_name: "Grimes", dojo:Dojo.last)
+
+Select Statements
+	Ninja.where(dojo: 4).select(:id)
+	Ninja.where(dojo: 4).select(:first_name)
+	Ninja.where(dojo: 7)

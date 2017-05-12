@@ -1,0 +1,4 @@
+rails g model User first_name:string last_name:string
+
+rails g model Friendship user:references friendship:references
+

@@ -1,0 +1,11 @@
+rails g model Comment commentable:references{polymorphic}
+
+Comment.new
+
+Comment.create(commentable_id: 1, commentable_type: "Blog")
+Comment.create(commentable_id: 1, commentable_type: "Message")
+Comment.create(commentable_id: 1, commentable_type: "Post")
+Comment.create(commentable_id: 1, commentable_type: "User")
+
+comment = Comment.first
+comment.update(:commentable_type =>User)

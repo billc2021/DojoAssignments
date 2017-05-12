@@ -1,0 +1,5 @@
+In the gem file
+	gem 'rails-footnotes', '~> 4.0'
+
+After footnots has been added to your gem file run
+	rails generate rails_footnotes:install

@@ -1,0 +1,4 @@
+rails g model Product name:string description:text
+rake db:migrate
+rails g controller Products index
+

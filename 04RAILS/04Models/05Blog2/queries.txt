@@ -1,0 +1,179 @@
+///////////////////
+USER
+///////////////////
+	User Model:
+		rails g model User first_name:string last_name:string email:string
+
+	User Class:
+		has_many :messages
+		has_many :posts
+		has-many :blogs through: :owners
+///////////////////
+
+
+///////////////////
+BLOG
+///////////////////
+	Blog Model:
+		rails g model Blog name:string description:string
+	
+	Blog Class:
+		has_many :owners
+///////////////////
+
+
+///////////////////
+POST
+///////////////////
+	Post Model:
+		rails g model Post title:string content:string user:references blog:references
+
+	Post Class:
+		belongs_to :user
+		has_many :messages 
+		belongs_to :blog 
+///////////////////
+
+
+///////////////////
+MESSAGE
+///////////////////
+	Message Model:
+		rails g model Message author:string message:string user:references post:references
+
+	Message Class:
+		belongs_to :user
+		belongs_to :post
+///////////////////
+
+
+///////////////////
+OWNER
+///////////////////
+	Owner Model:
+		rails g model Owner user:references blog:references
+
+	Owner Class:
+		belongs_to :user
+		belongs_to :blog
+///////////////////
+
+///////////////////////////////////////
+///////////////////////////////////////
+
+///////////////////
+CREATE Users
+///////////////////
+User.create(:first_name => "John", :last_name => "Smith", :email => "smith@john.com")
+User.create(:first_name => "Jane", :last_name => "Doe", :email => "doe@jane.com")
+User.create(:first_name => "Brett", :last_name => "Hart", :email => "hart@brett.com")
+User.create(:first_name => "Mike", :last_name => "Johns", :email => "johns@mike.com")
+User.create(:first_name => "Pam", :last_name => "Gray", :email => "gray@pam.com")
+
+///////////////////
+CREATE Blogs
+///////////////////
+Blog.create(:name => "Blog 1", :description => "This is Blog #1")
+Blog.create(:name => "Blog 2", :description => "This is Blog #2")
+Blog.create(:name => "Blog 3", :description => "This is Blog #3")
+Blog.create(:name => "Blog 4", :description => "This is Blog #4")
+Blog.create(:name => "Blog 5", :description => "This is Blog #5")
+
+///////////////////
+CREATE Owners of Blogs
+///////////////////
+user = User.first 
+blog = Blog.first
+Owner.create(:user => user, :blog => blog)
+
+user = User.second 
+blog = Blog.fourth
+Owner.create(:user => user, :blog => blog)
+
+user = User.third 
+blog = Blog.last
+Owner.create(:user => user, :blog => blog)
+
+///////////////////
+UPDATE Blog owners
+///////////////////
+Owner.update_all "user_id = 3"
+
+///////////////////
+Create Posts
+///////////////////
+01. Have the first user create 3 posts for the blog with an id of 2. Remember that you shouldn't do Post.create(user: User.first, blog_id: 2) but more like Post.create(user: User.first, blog: Blog.find(2)). Again, you should never reference the foreign key in Rails.
+
+	Post.create(user: User.first, blog: Blog.find(2), title: 'Title 1', content: 'Content for title 1')
+
+	Post.create(user: User.first, blog: Blog.find(2), title: 'Title 2', content: 'Content for title 2')
+
+	Post.create(user: User.first, blog: Blog.find(2), title: 'Title 3', content: 'Content for title 3')
+
+
+02. Have the second user create 5 posts for the last Blog.
+
+	Post.create(user: User.second, blog: Blog.last, title: 'Title 1', content: 'Content for title 1')
+	Post.create(user: User.second, blog: Blog.last, title: 'Title 2', content: 'Content for title 2')
+	Post.create(user: User.second, blog: Blog.last, title: 'Title 3', content: 'Content for title 3')
+	Post.create(user: User.second, blog: Blog.last, title: 'Title 4', content: 'Content for title 4')
+	Post.create(user: User.second, blog: Blog.last, title: 'Title 5', content: 'Content for title 5')
+
+03. Have the 3rd user create several posts for different blogs.
+
+	Post.create(user: User.third, blog: Blog.first, title: 'Title for Post', content: 'Content for post')
+	Post.create(user: User.third, blog: Blog.second, title: 'Title for Post', content: 'Content for post')
+	Post.create(user: User.third, blog: Blog.fourth, title: 'Title for Post', content: 'Content for post')
+
+04. Have the 3rd user create 2 messages for the first post created and 3 messages for the second post created
+
+	Message.create(author: User.third.first_name, message: 'Message for message', user: User.third, post: Post.second)
+
+	Message.create(author: User.third.first_name, message: 'Message for message', user: User.third, post: Post.first)
+
+05. Have the 4th user create 3 messages for the last post you created.
+
+	Message.create(author: User.fourth.first_name, message: 'Message from the fourth', user: User.fourth, post: Post.last)
+
+06. Change the owner of the 2nd post to the last user.
+
+	post = Post.second
+	post.update(:user => User.last)
+
+07. Change the 2nd post's content to be something else.
+
+	post.update(:content => 'Something else')
+
+08. Retrieve all blogs owned by the 3rd user (make this work by simply doing: User.find(3).blogs).
+
+	User.third.blogs
+
+09. Retrieve all posts that were created by the 3rd user
+
+	User.third.posts
+
+10. Retrieve all messages left by the 3rd user
+
+	User.third.messages
+
+11. Retrieve all posts associated with the blog id 5 as well as who left these posts.
+	
+	Post.where("blog_id = 5")
+
+12. Retrieve all messages associated with the blog id 5 along with all the user information of those who left the messages
+
+Message.includes(:posts).where('posts.blog_id = 5')
+
+
+"#<Message id: 1, author: \"Brett\", message: \"Message for message\", user_id: 3, post_id: 3, created_at: \"2017-05-11 18:01:34\", updated_at: \"2017-05-11 18:03:33\">"
+
+"#<Post id: 2, title: \"Title 1\", content: \"Content for title 1\", user_id: 1, blog_id: 2, created_at: \"2017-05-11 17:41:40\", updated_at: \"2017-05-11 17:41:40\">"
+
+13. Grab all user information of those that own the first blog (make this work by allowing Blog.first.owners to work).
+
+	Blog.first.owners
+
+14. Change it so that the first blog is no longer owned by the first user.
+
+	owner = Owner.first
+	owner.update(:user_id => User.find(3).id)

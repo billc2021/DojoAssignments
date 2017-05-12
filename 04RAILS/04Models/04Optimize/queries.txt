@@ -1,0 +1,37 @@
+players = Player.includes(:team).limit(10).order("RANDOM()")
+players.each do |player|
+	puts player.team.stadium
+end
+
+
+players = Player.includes(:team).limit(10).order("RANDOM()")
+players.each do |player|
+	puts player.team.stadium
+end
+
+
+
+Retrieve all players, then write a program that will loop through each player and display their team name, mascot and stadium. How many queries have we done?
+
+	players = Player.includes(:team)
+	players.each do |player|
+		puts player.team.name, player.team.mascot, player.team.stadium
+	end
+
+Retrieve all players from the 'Chicago Bulls' by using .includes
+
+	players = Player.joins(:team).where("teams.name = 'Chicago Bulls'")
+	players.each do |player|
+		puts player.name
+	end
+
+Retrieve all players along with the team name that play at the 'Staples Center'
+
+
+	players = Player.joins(:team).where("teams.stadium = 'Staples Center'")
+	players.each do |player|
+		puts player.name, player.team.name
+	end
+
+Retrieve all teams that have any player that start their name with the letter 'Z' by using .includes and .joins
+
