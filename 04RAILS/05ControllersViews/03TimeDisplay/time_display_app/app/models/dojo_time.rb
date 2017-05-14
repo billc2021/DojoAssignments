@@ -1,0 +1,2 @@
+class DojoTime < ApplicationRecord
+end

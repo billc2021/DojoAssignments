@@ -1,0 +1,3 @@
+rails g model SurveyForm name:string location:string language:string comment:string
+
+rails g controller Survey 

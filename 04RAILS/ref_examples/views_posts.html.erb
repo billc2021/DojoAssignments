@@ -1,0 +1,84 @@
+# edit.html.erb
+# /////////////////////////////
+<h1>Edit Post</h1>
+<%= form_for :post, url: post_path(@post), method: :patch do |f| %>
+	<% if @post.errors.any? %>
+		<% @post.errors.full_messages.each do |msg| %>
+			<div class="alert alert-danger"><%= msg %></div>
+		<% end %>
+	<% end %>
+	<p>
+		<%= f.label :title %>
+		<%= f.text_field(:title, {:class => 'form-control'}) %>
+	</p>
+	<p>
+		<%= f.label :body %>
+		<%= f.text_area(:body, {:class => 'form-control'}) %>
+	</p>
+
+	<p>
+		<%= f.submit(:class => 'btn btn-primary') %>
+	</p>
+<% end %>
+# /////////////////////////////
+# /////////////////////////////
+
+
+# index.html.erb
+# /////////////////////////////
+<h1>Blog Post</h1>
+<% @posts.each do |post|%>
+	<h4><%= post.title %></h4>
+	<div class="well">
+		<%= link_to post.body, post_path(post) %>
+		<br>
+		<%= link_to "Button Example", post_path(post), :class => 'btn btn-default' %>
+	</div>
+<% end %>
+# /////////////////////////////
+# /////////////////////////////
+
+
+# new.html.erb
+# /////////////////////////////
+<h1>Add Post</h1>
+<%= form_for :post, url: posts_path do |f| %>
+	<% if @post.errors.any? %>
+		<% @post.errors.full_messages.each do |msg| %>
+			<div class="alert alert-danger"><%= msg %></div>
+		<% end %>
+	<% end %>
+	<p>
+		<%= f.label :title %>
+		<%= f.text_field(:title, {:class => 'form-control'}) %>
+	</p>
+	<p>
+		<%= f.label :body %>
+		<%= f.text_area(:body, {:class => 'form-control'}) %>
+	</p>
+
+	<p>
+		<%= f.submit(:class => 'btn btn-primary') %>
+	</p>
+<% end %>
+# /////////////////////////////
+# /////////////////////////////
+
+
+# show.html.erb
+# /////////////////////////////
+<h2><%= @post.title %></h2>
+<div class="well">
+	<p><%= @post.body %></p>
+	<%= link_to 'Edit', edit_post_path(@post), :class => 'btn btn-default' %>
+	<%= link_to 'Delete', post_path(@post),method: :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-danger' %>
+</div>
+
+<hr>
+
+<div class="container">
+<%= render 'comments/comments' %>
+<%= render 'comments/form' %>
+</div>
+# /////////////////////////////
+# /////////////////////////////

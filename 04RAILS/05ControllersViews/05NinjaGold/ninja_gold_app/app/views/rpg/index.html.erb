@@ -1,0 +1,39 @@
+<p>Your Gold: <input type="disabled" name="" value="<%= session[:gold] %>"></p>
+<div id="farm">
+	<form action="/rpg/farm">
+		<label>Farm</label>
+		<br>
+		<label>(earns 10-20 pieces of gold)</label>
+		<br>
+		<input type="submit" name="" value="Find Gold!">
+	</form>
+</div>
+<br>
+<div id="cave">
+	<form action="/rpg/cave">
+		<label>Cave (earns 5-10 pieces of gold)</label>
+		<br>
+		<input type="submit" name="" value="Find Gold!">
+	</form>
+</div>
+<br>
+<div id="house">
+	<form action="/rpg/house">
+		<label>House (earns 2-5 pieces of gold)</label>
+		<br>
+		<input type="submit" name="" value="Find Gold!">
+	</form>
+</div>
+<br>
+<div id="casino">
+	<form action="/rpg/casino">
+		<label>Casino (earns\takes 0-50 pieces of gold)</label>
+		<br>
+		<input type="submit" name="" value="Find Gold!">
+	</form>
+</div>
+<br>
+<label>Your activities!</label>
+<% session[:messages].each do |message| %>
+	<p><%= message %></p>
+<% end %>

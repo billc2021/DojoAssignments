@@ -1,0 +1,4 @@
+rails g model DojoTime dt:datetime
+rake db:migrte
+
+rails g controller DateTimes index

@@ -1,0 +1,8 @@
+01. Create a Rails Project
+	rails new demo2
+
+02. Generate a new scaffold
+	rails g scaffold User first_name:string last_name:string email:string age:integer
+
+03. Migrate database 
+	rake db:migrate

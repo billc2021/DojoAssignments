@@ -1,0 +1,28 @@
+<form action="/form" method="POST">
+	<input type="hidden" name="authenticity_token" value="VxLCoqvap2IdbFioGuFfTadt+I5jVDPKxwg+6/1wPZIXUHTPyQzAq6Bat6MXlSF9HYrxQN3aXSZWZqJPMf2HOw==" />
+	<label>Your Name:</label>
+	<input type="text" name="survey[name]" placeholder="Enter Name">
+	<br>
+	<label>Dojo Location</label>
+	<select name="survey[location]">
+		<option>Please select a location</option>
+		<option value="seattle">Seattle</option>
+		<option value="chicago">Chicago</option>
+		<option value="austin">Austin</option>
+	</select>
+	<br>
+	<label>Favorite Language</label>
+	<select name="survey[language]">
+		<option>Please select a location</option>
+		<option value="python">Python</option>
+		<option value="javascript">JavaScript</option>
+		<option value="ruby">Ruby</option>
+	</select>
+	<br>
+	<label>Comment</label>
+	<br>
+	<textarea rows="8" cols="30" name="survey[comment]" placeholder="Enter optional comment"></textarea>
+	<br>
+	<input type="submit" name="" value="Submit">
+</form>
+

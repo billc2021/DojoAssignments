@@ -1,0 +1,8 @@
+01. Create a project
+    rails new user_app
+
+02. Generate Model
+    rails g model User name:string age:integer
+
+03. Generate a Controller
+    rails g controller Users new index show list delete

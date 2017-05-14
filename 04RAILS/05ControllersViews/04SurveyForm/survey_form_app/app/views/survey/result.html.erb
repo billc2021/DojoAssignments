@@ -1,0 +1,10 @@
+<h3>Submitted Information</h3>
+
+<% if flash[:message] %>
+	<p><%= flash[:message] %></p>
+<% end %>
+
+<p><label>Name: </label><%= @survey['name'] %></p>
+<p><label>Dojo Location: </label><%= @survey['location'] %></p>
+<p><label>Favorite Language: </label><%= @survey['language'] %></p>
+<p><label>Comment: </label><%= @survey['comment'] %></p>

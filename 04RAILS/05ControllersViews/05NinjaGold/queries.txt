@@ -1,0 +1,1 @@
+rails g controller Rpg farm cave casino house
