@@ -1,0 +1,22 @@
+DOJOS
+rails generate scaffold Dojo branch:string street:string city:string state:string
+
+Dojo.create(branch:"CD Seattle", street:"1111 Main St", city:"Bellevue", state:"WA")
+Dojo.create(branch:"CD San Jose", street:"2222 Zanker rd", city:"San Jose", state:"CA")
+Dojo.create(branch:"CD Burbank", street:"3333 Olive Ave", city:"Burbank", state:"CA")
+Dojo.create(branch:"CD Chicago", street:"4444 Institute Pl", city:"Chicago", state:"IL")
+
+STUDENTS
+rails generate model Student first_name:string last_name:string email:string dojo:references
+
+rails g controller Students create update destroy
+
+Student.create(first_name: "John", last_name: "Smith", email: "smith@john.com", dojo_id: 1)
+
+Student.create(first_name: "Jane", last_name: "Doe", email: "doe@jane.com", dojo_id: 2)
+
+Student.create(first_name: "Brett", last_name: "Hart", email: "hart@brett.com", dojo_id: 3)
+
+Student.create(first_name: "Jim", last_name: "Brady", email: "brady@jim.com", dojo_id: 4)
+
+

@@ -1,3 +1,0 @@
-gem 'rails-footnotes'
-
-rails generate rails_footnotes:install

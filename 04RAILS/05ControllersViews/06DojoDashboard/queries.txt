@@ -1,0 +1,5 @@
+rails g model Dojo branch:string street:string city:string city:string state:string
+rake db:migrate
+
+rails g model Student first_name:string last_name:string email_string dojo:references
+rake db:migrate

@@ -1,0 +1,13 @@
+<h3>Comments</h3>
+<% @comments.each do |comment| %>
+	<div class="well">
+		<p>
+			<%= comment.body  %>
+			<br>
+			by - <%= comment.user.email %>
+			<br>
+			<%= comment.created_at.strftime('%c') %>
+			<%= link_to '[X]', [comment.post, comment], method: :delete, data: { confirm: 'Are you sure?' }%>
+		</p>
+	</div>
+<% end %>

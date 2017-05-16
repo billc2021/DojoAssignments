@@ -1,0 +1,25 @@
+<h1>User</h1>
+<h3>Login</h3>
+<form action="submit_login" method="POST">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <label>Email:</label>
+  <input type="text" name="user[email]" placeholder="Enter Email" class="form-control">
+  <br>
+  <label>Password:</label>
+  <input type="password" name="user[password]" placeholder="Enter Password" class="form-control">
+  <br>
+  <input type="submit" name="" value="Login" class="btn btn-primary">
+</form>
+<br>
+<h3>Register</h3>
+<form action="register" method="POST">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <label>Email:</label>
+  <input type="text" name="user[email]" placeholder="Enter Email" class="form-control">
+  <br>
+  <label>Password:</label>
+  <input type="password" name="user[password]" placeholder="Enter Password" class="form-control">
+  <input type="password" name="user[confirm]" placeholder="Confirm Password" class="form-control">
+  <br>
+  <input type="submit" name="" value="Register" class="btn btn-primary">
+</form>
