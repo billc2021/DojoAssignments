@@ -1,0 +1,15 @@
+01.CREATE
+- new => displays new record form
+- create => processes new record form
+
+02. READ
+- index => lists records
+- show => displays a single record 
+
+03. UPDATE
+- edit => displays edit record form
+- update => processes edit record form
+
+04. DELETE 
+- delete => display delete record form
+- destroy => processes delete record form

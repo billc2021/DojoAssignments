@@ -1,0 +1,22 @@
+<h1>Authors Index</h1>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Edit</th>
+			</tr>
+		</thead>
+		<tbody>
+		<% @authors.each do |author| %>
+			<tr>
+				<td><%= author.name %></td>
+				<td>
+					<%= link_to("Edit", edit_author_path(author)) %>
+				</td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+	<br>
+	<%= link_to("New Author", new_author_path) %>

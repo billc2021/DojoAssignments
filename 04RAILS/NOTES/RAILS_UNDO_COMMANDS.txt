@@ -1,0 +1,28 @@
+==================
+CONTROLLERS
+==================
+Generate
+- rails generate controller StaticPages home help
+
+Destroy
+- rails destroy  controller StaticPages home help
+
+==================
+MODELS
+==================
+Generate
+- rails generate model User name:string email:string
+
+Destroy
+- rails destroy model User
+
+==================
+MIGRATIONS
+==================
+- rails db:migrate
+
+Undo a single migration step
+- rails db:rollback
+
+Go all the way back to the beginning
+- rails db:migrate VERSION=0

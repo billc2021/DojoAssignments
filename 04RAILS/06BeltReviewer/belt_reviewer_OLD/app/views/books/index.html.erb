@@ -1,0 +1,11 @@
+<h1>Welcome, Name!</h1>
+<%= link_to("Add Book and Review", new_author_book_path) %>
+
+<h3>Recent Book Reviews:</h3>
+
+<% @books.each do |book| %>
+	<p><%= book.title %></p>
+	<%= book.inspect %>
+	<%= link_to(book.title, author_books_path(book.id)) %>
+
+<% end %>

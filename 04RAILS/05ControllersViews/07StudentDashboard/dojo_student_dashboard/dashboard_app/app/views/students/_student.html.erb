@@ -1,0 +1,27 @@
+<h3>Students for <%= @dojo.city %></h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th col=3>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @dojo.students.each do |student| %>
+    <tr>
+      <td><%= student.first_name %></td>
+      <td><%= student.last_name %></td>
+      <td><%= student.email %></td>
+      <td col=3>
+        <a href="#">Show</a> | <a href="#">Edit</a> | <a href="#">Delete</a>
+      </td>
+    </tr>
+  <% end %>
+ 
+  </tbody>
+</table>
+<br>

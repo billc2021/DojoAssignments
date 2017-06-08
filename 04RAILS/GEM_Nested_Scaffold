@@ -1,0 +1,9 @@
+01. Put this line in your Gemfile:
+
+	gem 'nested_scaffold'
+
+02. rails generate nested_scaffold PARENT_NAME/NAME [field:type field:type] [options]
+
+	Example (While "Post" model exists):
+
+		rails g nested_scaffold post/comment name:string content:text

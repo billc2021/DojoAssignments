@@ -1,0 +1,98 @@
+Relationship Types
+
+==================================
+One-to-One
+==================================
+Class with 'belongs_to' gets the foreign key
+Always define both sides of the relationship 
+
+REASON(s) TO USE 
+01. Unique items a person or thing can have only one of
+	
+	Employee has_one :office
+	
+	Studen has_one :id_card
+
+02. Sometimes used to break up a single table
+
+	Customer has_one :billing_address (billing_address could go in Customer)
+
+	Stage has_one :lighting_configuration
+
+==================================
+==================================
+
+
+==================================
+One-to-Many
+==================================
+Working with one-to-many will return an array of objects not a single object
+
+Always define both sides of the relationship 
+
+REASON(s) TO USE
+When an object has many objects that belong to it exclusively
+
+	Photographer has_many :photographs
+	Manufacturerer has_many :products
+
+Subject - Page
+	Subject has_many :pages
+	Page belongs_to :subject
+
+
+has_many Methods:
+
+	subject.pages 
+	subject.pages << page 
+	subject.pages.delete(page)
+	subject.pages.destroy(page)
+	subject.pages.clear # removes all pages 
+	subject.pages.empty?
+	subject.pages.size
+
+==================================
+==================================
+
+
+==================================
+Many-to-Many
+==================================
+Requires a join table that:
+- Needs two foreign keys (index both keys together)
+- Has no primary key column (:id => false)
+
+Rails convention for naming a join table:
+- first_table + _ + second_table
+- both tables are plural
+- alphabetical order
+
+Examples:
+	
+	Project - Collaborator:
+
+		collaborators_projects
+
+	BlogPost - Catagory:
+
+		blog_post_categories
+
+	AdminUser - Page
+
+		admin_users_pages
+
+==================================
+==================================
+
+
+==================================
+Many-to-Many - Complex
+==================================
+When you need to either perform CRUD on the join table of a many-to-many or you need to store more information than just foreign keys
+
+If you want to track the changes an admin makes to a section:
+AdminUser - Section
+- AdminUser has_many :section_edits
+- SectionEdit belongs_to :admin_user 
+- Section has_many :section_edits
+- SectionEdit belongs_to :section 

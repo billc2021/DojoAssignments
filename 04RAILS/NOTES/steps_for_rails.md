@@ -70,6 +70,9 @@ user = User.new(first_name: "John", last_name: "Smith", age: 22)
     ##### Updating one record:
         Person.update(15, :user_name => 'Samuel', :group => 'expert')
 
+        person = Person.find(<WHAT_EVER_VALUE)
+        person.update_attributes(:user_name => 'Padro', :group => 'expert')
+
     ##### Updating multiple records:
         people = { 1 => { "first_name" => "David" }, 2 => { "first_name" => "Jeremy" } }
         Person.update(people.keys, people.values)

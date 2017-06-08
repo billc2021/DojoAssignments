@@ -1,0 +1,13 @@
+brew services start postgresql
+
+brew services stop postgresql
+
+brew services restart postgresql
+
+gem install pg -- --with-pg-config=/usr/local/bin/pg_config
+
+bundle install
+
+rake db:create:all
+
+rake db:migrate

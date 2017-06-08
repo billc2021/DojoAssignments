@@ -1,0 +1,73 @@
+START Postgresql
+brew services start postgresql
+
+STOP Postgresql
+brew services stop postgresql
+
+RESTART Postgresql
+brew services restart postgresql
+
+
+SETUP UP POSTGRES TO WORK WITH A RAILS APP
+01. Install the pg gem:
+	
+	gem install pg -- --with-pg-config=/usr/local/bin/pg_config
+
+02. Bundle Install 
+	
+	bundle install
+
+03. Setup config/database.yml
+	development:
+	adapter: postgresql
+	encoding: unicode
+	database: myapp_dev
+	pool: 5
+	username: your_username_on_mac
+	password:
+
+	test:
+	adapter: postgresql
+	encoding: unicode
+	database: myapp_test
+	pool: 5
+	username: your_username_on_mac
+	password:
+
+
+	CREATE THE DEVELOPEMENT AND TEST DATABASES
+	01. rake db:create:all
+	02. rake db:migrate
+
+
+
+===========================
+POSTGRES COMMANDS
+===========================
+
+==========
+CREATE - createdb db_name
+==========
+
+
+==========
+DELETE - dropdb db_name
+==========
+
+==========
+ACCESSING - psql - db_name
+==========
+
+==========
+HELP - \h
+==========
+
+==========
+QUIT - \q
+==========
+
+
+===========================
+USING RAILS
+===========================
+rails new demo --database=postgresql --skip-test-unit

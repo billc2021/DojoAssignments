@@ -1,0 +1,46 @@
+HTML FORM
+<form action="/subjects/create" method="POST">
+
+	<input type="text" name="subject[name]">
+	<input type="text" name="subject[position]">
+	<input type="text" name="subject[visible]">
+	
+	<input type="submit" name="commit" value="Create Subject">
+	
+</form>
+
+
+RAILS FORM 
+<%= form_tag(:action => 'create') do %>
+	
+	<%= text_field_tag('subject[name]') %>
+	<%= text_field_tag('subject[position]') %>
+	<%= text_field_tag('subject[visible]') %>
+	
+	<%= submit_tag("Create Subject") %>
+
+<% end%>
+
+
+OBJECT AWARE RAILS FORM 
+<%= form_tag(:action => 'create') do %>
+
+	<%= text_field(:subject, :name) %>
+	<%= text_field(:subject, :position) %>
+	<%= text_field(:subject, :visible) %>
+	
+	<%= submit_tag("Create Subject") %>
+
+<% end %>
+
+
+RAILS FORM, FORM_FOR :OBJECT
+<%= form_for(:subject, :url => {:action => 'create' }) do |f| %>
+
+	<%= f.text_field(:name) %>
+	<%= f.text_field(:position) %>
+	<%= f.text_field(:visible) %>
+	
+	<%= submit_tag("Create Subject") %>
+
+<% end %>

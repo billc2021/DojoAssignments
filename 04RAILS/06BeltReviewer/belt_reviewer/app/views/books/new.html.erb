@@ -1,0 +1,21 @@
+<%= link_to "Home", books_path %> | <span>Logout</span>
+
+<h2>Add a New Book Title and a Review:</h2>
+
+<%= form_for(@book) do |f|%>
+	<div class="field">
+		<%= f.label "Title:" %>
+		<%= f.text_field :title %>
+	</div>
+
+	<div class="field">
+		<%= f.label "Choose from the list:" %>
+		<%= f.collection_select(:author_id, Author.all, :id, :name)%>
+	</div>
+	
+	<div class="field">
+		<%= f.label "Or add a new author:" %>
+		<%= f.text_field :author_id %>
+	</div>
+
+<% end %>

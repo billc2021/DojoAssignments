@@ -1,0 +1,99 @@
+//////////////
+WHERE
+//////////////
+Examples of the finding with the WHERE clause (NOTE: the WHERE clause may return an array)
+
+	subjects = Subject.where(:visible => true)
+	subjects.to_sql
+	subjects = Subject.where("visible = true") (DON'T USE THIS METHOD, IT IS NOT SQL INJECTION SAFE)
+	subjects = Subject.where("visible = ?", true)
+	subjects = Subject.where("name = ?", "Next Subject")
+
+	CHAINING 
+	subjects = Subject.where(:visible => true).where(:position => 1)
+
+	The line above is the same as
+	subjects = Subject.where(:visible => true, :position => 1)
+	
+	The line below will return an single object instead of an array
+	subjects = Subject.where(:visible => true, :position => 1).first
+
+
+Example of the three below:
+Subject.order("position ASC").limit(20).offset(40)
+
+//////////////
+ORDER
+//////////////
+Let's you specify the sort order, you can sort by any column
+
+Syntax: table_name.column_name ASC/DESC 
+
+	The table_name is optional with a single table but required on when working with multiple tables and they have the same column name
+
+		order("subjects.created_at ASC") (both table will have a created_at)
+	
+	Sorting by more than one column by using a "," after each declaration
+
+		order("subjects.visible DESC, subjects.name ASC")
+
+//////////////
+LIMIT
+//////////////
+Limit's the results returned 
+
+//////////////
+OFFSET
+//////////////
+Let's you skip over results
+
+
+
+//////////////
+Named Scopes
+//////////////
+Named scopes are:
+- Queries defined in a model
+- Defined using ActiveRelation query methods
+- Can be called like ActiveRelation methods 
+- Can accept parameters
+- Rails 4 requires lambda syntax
+
+
+Example:
+	scope :active, lambda {where(:active => true)}
+
+	The above example is the same as:
+
+		def self.active
+			where(:active => true)
+		end
+
+You would call it by running the following:
+
+	Customer.active
+
+
+To pass in a variable:
+
+	scope :with_content_type, lambda { |ctype| where(:content_type => ctype)}
+
+	The above line is the same as:
+
+		def self.with_content_type(ctype)
+			where(:content_type => ctype)
+		end
+
+You would call it by running the following:
+
+Section.with_content_type('html')
+
+Another example
+
+scope :recent, lambda {
+	where(:created_at => 1.week.ago..Time.now)
+}
+
+Chaining scopes
+
+	Article.recent.visible.newest_first

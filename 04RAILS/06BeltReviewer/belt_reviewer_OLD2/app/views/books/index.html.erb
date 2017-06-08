@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Welcome, User!</h1>
+
+<%= link_to 'New Book', new_book_path %>
+<h3>Recent Books</h3>
+    <dl>
+    <% @books.each do |book| %>
+        <dt><%= link_to book.title, book_path(book) %> <%# link_to 'Delete', book, method: :delete, data: { confirm: 'Are you sure?' } %></dt>
+          <% book.reviews.each do |r| %>
+        <dd><%= r.rating %> Stars</dd>
+        <dd><%= r.content %></dd><br>
+          <% end %>
+    <% end %>
+    </dl>
+
+<br>
+

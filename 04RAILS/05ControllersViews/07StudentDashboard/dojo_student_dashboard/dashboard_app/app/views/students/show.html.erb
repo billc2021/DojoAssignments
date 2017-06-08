@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>First name:</b>
+  <%= @student.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @student.last_name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @student.email %>
+</p>
+
+
+<%= link_to 'Edit', edit_dojo_student_path(@student.dojo, @student) %> |
+<!--<%= link_to 'Back', dojo_students_path(@student.dojo) %>-->
+<%= link_to 'Back', dojo_path(@student.dojo) %>

@@ -1,0 +1,19 @@
+create a database
+	CREATE DATABASE demo_project_development;
+	CREATE DATABASE demo_project_test;
+
+Create a user and give permission
+	GRANT ALL PRIVILEGES ON demo_project_development.* TO 'rails_user'@'localhost' IDENTIFIED BY 'secretpassword';
+	GRANT ALL PRIVILEGES ON demo_project_test.* TO 'rails_user'@'localhost' IDENTIFIED BY 'secretpassword';
+
+Create a table
+	CREATE TABLE pet (name VARCHAR(20));
+
+Drop a table
+	DROP TABLE pet;
+
+Show databases
+	SHOW DATABASES;
+
+Show Tables
+	SHOW TABLES:

@@ -1,0 +1,19 @@
+<%= link_to("<< Back to Books", author_books_path) %>
+
+<h2>Add a New Book and a Review:</h2>
+
+<%= form_for(@book, :url => author_books_path(:author_id => @author.id)) do |f| %>
+	<div class="field">
+		<%= f.label(:title, "Book Title:") %>
+		<%= f.text_field(:title, ) %>		
+	</div>
+
+	<div class="field">
+		<%= f.label(:author_id, "Author:") %>
+		<%= f.collection_select(:author_id, Author.all, :id, :name) %>
+	</div>
+
+	<div class="field">
+		<%= f.submit("Add Book and Review") %>		
+	</div>
+<% end %>

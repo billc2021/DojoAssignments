@@ -1,0 +1,19 @@
+To see all rake tasks
+	rake -T 
+
+To filter only the rake db: tasks
+	rake -T db
+
+To pass in environment variales place them in all caps
+	rake db:schema:dump RAILS_ENV=production
+
+To rollback a point before migrations
+	rake db:migrate VERSION=0
+
+To run a specific migrations
+	rake db:migrate:status (to get the version number)
+	rake db:migrate VERSION=20170518170729
+
+	rake db:migrate:up VERSION=20170518170729
+	rake db:migrate:down VERSION=20170518170729
+	rake db:migrate:redo VERSION=20170518170729 (runs down then up of the last migration unless a VERSION is supplied)

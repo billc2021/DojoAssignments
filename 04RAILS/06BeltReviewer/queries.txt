@@ -1,0 +1,31 @@
+rails g model Authors name:string
+
+rails g controller Authors
+
+rails g model Book title:string rating:integer author:references
+
+add_column "books" "rating", :integer 
+
+rails g controller Books
+
+rails g model User name:string alias:string email:string password_digest:string
+
+rails g model Review content:text rating:integer user:references
+
+user = User.create(:name => "Jane Doe", :alias => "JDoe", :email => 'doe@jane.com', :password => 'password')
+
+
+rails g migration RemoveRatingFromBooks rating:integer
+
+rails g controller Reviews
+
+
+	<div class="field">
+		<%= f.label(:reviews, "Reviews:") %><br>
+		<%= f.text_area(:reviews, :placeholder => "Enter a review", cols: "60", rows: "8") %>		
+	</div>
+
+	<div class="field">
+		<%= f.label(:rating, "Ratings:") %>
+		<%= f.number_field(:rating) %>		
+	</div>

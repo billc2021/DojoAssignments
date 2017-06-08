@@ -1,0 +1,33 @@
+bundle install --without production
+
+=================
+CONTROLLERS
+=================
+Create
+	rails generate controller StaticPages home help
+
+Delete
+	rails destroy  controller StaticPages home help
+
+
+=================
+MODELS
+=================
+Create 
+	rails generate model User name:string email:string
+
+Delete 
+	rails destroy model User
+
+
+=================
+MIGRATIONS
+=================
+Migrate
+	rails db:migrate
+
+Rollback
+	db:rollback
+
+Rollback to the beginning
+	rails db:migrate VERSION=0

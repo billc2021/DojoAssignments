@@ -1,0 +1,10 @@
+rails g scaffold Dojo branch:string street:string city:string state:string
+
+rails g nested_scaffold dojo/student first_name:string last_name:string email:string
+
+
+
+rails g model Student first_name:string last_name:string email:string dojo:references
+
+rails g controller Students
+

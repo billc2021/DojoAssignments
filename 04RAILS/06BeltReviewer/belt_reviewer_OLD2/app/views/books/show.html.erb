@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<dl>
+  <dt><strong>Title:</strong><%= @book.title %></dt><br>
+    <% @book.reviews.each do |r| %>
+      <dd><%= r.rating %> Stars</dd>
+      <dd><%= r.content %></dd><br>
+    <% end %>
+</dl>
+
+<%= render 'reviews/form', :locals => {:book => @book}%>
+
+<%= link_to 'New Review', new_book_review_path(@book) %>
+<br>
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>
